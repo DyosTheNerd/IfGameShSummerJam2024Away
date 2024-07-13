@@ -2,7 +2,7 @@
 #define HLSL_TEXTURE_THREEDEE_SDF
 
 
-#include "Assets/TerrainSystem/Hedronizer/SDFInclude/hedronizer_variables.hlsl"
+#include "Assets/modules/TerrainSystem/Hedronizer/SDFInclude/hedronizer_variables.hlsl"
 
 Texture3D<float> _SDF;
 SamplerState sampler_SDF;
