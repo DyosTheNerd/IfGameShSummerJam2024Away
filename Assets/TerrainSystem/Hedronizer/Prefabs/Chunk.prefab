@@ -99,8 +99,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7acefbdf087bf8d42ab0440315b5bb67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VolumeResolution:
+    x: 256
+    y: 256
+    z: 256
   volumeManager: {fileID: 0}
-  shader: {fileID: 7200000, guid: 9cb4eb30f442f844f8a5ddd4a24a592e, type: 3}
+  shader: {fileID: 0}
+  argsBufferCorrectshader: {fileID: 0}
   cells_per_axis: 8
   size:
     x: 0
@@ -115,6 +120,7 @@ MonoBehaviour:
   gradientH: 0.001
   bufferSize: 0
   max_triangles: 0
+  min_triangles: 0
   ready: 0
   IsChild: 1
 --- !u!114 &3488224318752812408

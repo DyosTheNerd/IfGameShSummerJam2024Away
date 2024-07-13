@@ -9,8 +9,10 @@ using UnityEngine.Rendering;
 public class Hedronizer : MonoBehaviour
 {
     //public Texture3DBuilder volumeBuilder;
+    [HideInInspector]
     public int3 VolumeResolution = new int3(256,256,256);
     public VolumeManager volumeManager;
+    [HideInInspector]
     public GraphicsBuffer computeBuffer;
     //public GraphicsBuffer vertexBuffer;
     GraphicsBuffer argsBuffer;
@@ -23,20 +25,25 @@ public class Hedronizer : MonoBehaviour
 
     float4 cell_size;
     //public float4 origin;
+    [HideInInspector]
     public float4 size;
+        [HideInInspector]
     public float3 sample_region;
 
-    [Range(-1000,1000)]
+    [Range(-10,10)]
     public float isovalue = 0.3f;
 
-    [Range(0,1)]
-    public float gradientH = 0.001f;
+    [HideInInspector]
+    public float gradientH = 0.01f;
 
+    [HideInInspector]
     public int bufferSize;
     public int max_triangles;
     public int min_triangles;
+    [HideInInspector]
     public bool ready = false;
     private int quantity_of_vec4s = 2;
+    [HideInInspector]
     public bool IsChild = true;
 
     bool cached_buffer_count = false;
@@ -73,14 +80,14 @@ public class Hedronizer : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {   
-        if(!IsChild){
-            volumeManager.Initialize(VolumeResolution, size.xyz);
-            Initialize();
-        }
-    }
+    //Start is called before the first frame update
+    // void Start()
+    // {   
+    //     if(!IsChild){
+    //         volumeManager.Initialize(VolumeResolution, size.xyz);
+    //         Initialize();
+    //     }
+    // }
 
     public void Initialize(){
 

@@ -43,7 +43,7 @@ public class HedronChunkCollider : MonoBehaviour
 
     public float3 Size;
 
-
+    bool chunkIsEmpty = false;
     public void SetDirty(){
         dirty = true;
     }
@@ -106,6 +106,9 @@ public class HedronChunkCollider : MonoBehaviour
 
         }
 
+        if(listVertices.Count == 0) {  chunkIsEmpty = true;  return;  } 
+        chunkIsEmpty = false;
+
         meshes[index].mesh.Clear() ;
         meshes[index].mesh.SetVertices(listVertices);
         meshes[index].mesh.SetTriangles(listIndexes,0);
@@ -162,6 +165,13 @@ public class HedronChunkCollider : MonoBehaviour
 
     public void MeshSwap(){
 
+        if(chunkIsEmpty){
+            collider.enabled = false;
+            return;
+        } else if(!collider.enabled){
+            collider.enabled = true;
+        }
+
         currentMesh = (currentMesh + 1) % 2; 
         filter.mesh = meshes[currentMesh].mesh;
         collider.sharedMesh = meshes[currentMesh].mesh;
@@ -178,7 +188,7 @@ public class HedronChunkCollider : MonoBehaviour
     void OnDrawGizmosSelected(){
         
         Gizmos.color = Color.red;
-        var offset = new float3(transform.position.x + Size.x/ 2, Size.y / 2, transform.position.z + Size.z/2);
+        var offset = new float3(transform.position) + (Size / 2);
         Gizmos.DrawWireCube(offset , Size);
     }
 

@@ -7,6 +7,10 @@ using Unity.Mathematics;
 public class VolumeManager : MonoBehaviour
 {
 
+    public delegate void OnUpdate();
+    public event OnUpdate Updated;
+
+
     struct Shape{
         public float4 rotation;
         public float3 position;
@@ -35,7 +39,8 @@ public class VolumeManager : MonoBehaviour
     public ComputeShader ShapeWriter; 
     GraphicsBuffer shapeBuffer;
 
-    public bool dirty= false;
+
+    bool _dirty= false;
 
     public void Initialize(int3 resolution, float3 scale){
         this.resolution = resolution;
@@ -62,7 +67,7 @@ public class VolumeManager : MonoBehaviour
             value2 = 0.0f
         });
 
-        dirty = true;
+        _dirty = true;
 
     }
 
@@ -77,7 +82,7 @@ public class VolumeManager : MonoBehaviour
             value2 = 0.0f
         });
 
-        dirty = true;
+        _dirty = true;
 
     }
 
@@ -118,7 +123,11 @@ public class VolumeManager : MonoBehaviour
         addSpheres.Clear();
         removeSpheres.Clear();
         shapes.Clear();
-        dirty = false;
+        _dirty = false;
+
+        //Not sure about the dispatch timing here;
+        // but its good enough for now;
+        Updated?.Invoke();
     }
 
 
@@ -134,7 +143,7 @@ public class VolumeManager : MonoBehaviour
     }
 
     void Update(){
-        if(dirty)
+        if(_dirty)
             DispatchShapes();
     }
 
