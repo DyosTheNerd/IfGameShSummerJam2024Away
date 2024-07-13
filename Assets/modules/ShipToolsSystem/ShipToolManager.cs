@@ -14,23 +14,27 @@ public class ShipToolManager : MonoBehaviour
     public float3 AsteroidCenter = new float3(32, 32, 32);
 
     // offset on vectors ShipForward and cross(ShipForward, ShipForward - PlanetCenter)
-    public Quaternion AimDirection;
+    public float3 BaseAimDirection;
+    private float3 AimDirection;
+
     public float3 ShipAimForward;
     public float3 ShipAimRight;
     public float3 ShipAimCenter;
-    public float2 RotationLimits;
+    public float4 RotationLimits;
 
     public float2 aimAxis;
+
+    public float3 GetAim(){
+        return AimDirection;
+    }
 
 
     // Start is called before the first frame update
     void Awake()
     {
         ShipTransform = transform.parent;
-        // actions.FindActionMap("ShipAimTest").FindAction("HorizontalAxis").performed += 
-        //                                 (InputAction.CallbackContext context) => {aimAxis.x = context.ReadValue<float>();};
-        // actions.FindActionMap("ShipAimTest").FindAction("VerticalAxis").performed += 
-        //                                 (InputAction.CallbackContext context) => {aimAxis.y = context.ReadValue<float>();};
+
+        BaseAimDirection = math.normalize(BaseAimDirection);
     }
 
     // Update is called once per frame
@@ -38,6 +42,14 @@ public class ShipToolManager : MonoBehaviour
     {
         UpdateShipAimVectors();
         Aim(aimAxis);
+
+        if(Input.GetButtonDown("Shoot1")){
+            ActivateTool();
+        }
+
+        if(Input.GetButtonUp("Shoot1")){
+            DeactivateTool();
+        }
     }
 
    // public float3 
@@ -51,15 +63,22 @@ public class ShipToolManager : MonoBehaviour
     void Aim(float2 axis){
         aimAxis.x = Input.GetAxis("Horizontal");
         aimAxis.y = Input.GetAxis("Vertical");
-    
-       Quaternion q1 = Quaternion.AngleAxis(aimAxis.y * RotationLimits.y, ShipAimRight);
-       Quaternion q2 = Quaternion.AngleAxis(aimAxis.x * RotationLimits.x, ShipAimCenter);
+        // aimAxis.x = actions.FindActionMap("ShipAimTest").FindAction("HorizontalAxis").ReadValue<float>();
+        // aimAxis.y = actions.FindActionMap("ShipAimTest").FindAction("VerticalAxis").ReadValue<float>();
+       Quaternion q1;
+       if(axis.y >= 0.0f)
+            q1 = Quaternion.AngleAxis(aimAxis.y * RotationLimits.y, ShipAimRight);
+       else q1 = Quaternion.Inverse(Quaternion.AngleAxis(-aimAxis.y * RotationLimits.y, ShipAimRight));
 
-       AimDirection = q1 * q2 * Quaternion.AngleAxis(0, ShipAimForward);
+       Quaternion q2;
+       if(axis.x >= 0.0f)
+            q2 = Quaternion.AngleAxis(aimAxis.x * RotationLimits.x, ShipAimForward);
+       else q2 = Quaternion.Inverse(Quaternion.AngleAxis(-aimAxis.x * RotationLimits.x, ShipAimForward));
+
+
+       AimDirection = q1 * q2 * BaseAimDirection;
 
     }
-
-
 
     void OnDrawGizmosSelected(){
         Gizmos.color = Color.red;
@@ -72,8 +91,22 @@ public class ShipToolManager : MonoBehaviour
         Gizmos.DrawLine(transform.position, (float3)transform.position + ShipAimRight * 1.5f);
 
         Gizmos.color = Color.cyan;
-         Gizmos.DrawLine(transform.position, transform.position + (AimDirection * ShipTransform.forward  * 30f));
+         Gizmos.DrawLine(transform.position, (float3)transform.position + AimDirection * 15f);
 
-        //Gizmos.DrawLine(transform.position, )
+        Gizmos.color = Color.yellow;
+                 Gizmos.DrawLine(transform.position, transform.position + (transform.rotation * BaseAimDirection  * 2f));
+
     }
+
+    public void ActivateTool(){
+        activeTool.ActivateTool(this);
+        Debug.Log("Button Pressed");
+    }
+
+    public void DeactivateTool(){
+        activeTool.DeactivateTool(this);
+        Debug.Log("Button Unpressed");
+        
+    }
+
 }
