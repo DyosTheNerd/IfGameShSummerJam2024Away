@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b730295645e3b42a84d00ebb8cff36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actions: {fileID: -944628639613478452, guid: 8b2bad7709afbe440a839c51aaf43298, type: 3}
+  playerNumber: 2
   ShipTransform: {fileID: 1743283209}
   activeTool: {fileID: 11400000, guid: 0c83f23abf95d8d4ca85febc63510023, type: 2}
   AsteroidCenter:
@@ -285,6 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc7ffe1245770904ab5e130dc7788e16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerNumber: 1
   MaxSpeed: 1.5
   Acceleration: 0.1
   TurnAcceleration: -0.05
@@ -1164,9 +1165,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc7ffe1245770904ab5e130dc7788e16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerNumber: 2
   MaxSpeed: 1.5
-  Acceleration: -0.1
-  TurnAcceleration: 0.05
+  Acceleration: 0.1
+  TurnAcceleration: -0.05
   MaxTurnSpeed: 0.2
   velocity:
     x: 0
@@ -1236,6 +1238,74 @@ Transform:
   - {fileID: 588557873}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 90, z: 0}
+--- !u!1001 &1757656546
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3003518628942137343, guid: 0c573a8abd19b0941bb68e47bdc9109b,
+        type: 3}
+      propertyPath: m_Name
+      value: music
+      objectReference: {fileID: 0}
+    - target: {fileID: 7929548975584893360, guid: 0c573a8abd19b0941bb68e47bdc9109b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 7929548975584893360, guid: 0c573a8abd19b0941bb68e47bdc9109b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 7929548975584893360, guid: 0c573a8abd19b0941bb68e47bdc9109b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7929548975584893360, guid: 0c573a8abd19b0941bb68e47bdc9109b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7929548975584893360, guid: 0c573a8abd19b0941bb68e47bdc9109b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7929548975584893360, guid: 0c573a8abd19b0941bb68e47bdc9109b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7929548975584893360, guid: 0c573a8abd19b0941bb68e47bdc9109b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7929548975584893360, guid: 0c573a8abd19b0941bb68e47bdc9109b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7929548975584893360, guid: 0c573a8abd19b0941bb68e47bdc9109b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7929548975584893360, guid: 0c573a8abd19b0941bb68e47bdc9109b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0c573a8abd19b0941bb68e47bdc9109b, type: 3}
 --- !u!1 &1818872022
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,7 +1350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b730295645e3b42a84d00ebb8cff36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actions: {fileID: -944628639613478452, guid: 8b2bad7709afbe440a839c51aaf43298, type: 3}
+  playerNumber: 1
   ShipTransform: {fileID: 161550444}
   activeTool: {fileID: 11400000, guid: 0c83f23abf95d8d4ca85febc63510023, type: 2}
   AsteroidCenter:
@@ -1355,3 +1425,4 @@ SceneRoots:
   - {fileID: 1743283209}
   - {fileID: 2058952648}
   - {fileID: 1521570568}
+  - {fileID: 1757656546}
