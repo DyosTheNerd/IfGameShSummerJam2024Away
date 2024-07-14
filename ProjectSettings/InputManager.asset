@@ -92,7 +92,7 @@ InputManager:
     negativeButton: 
     positiveButton: e
     altNegativeButton: 
-    altPositiveButton: joystick 1 button 0
+    altPositiveButton: 
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -102,8 +102,8 @@ InputManager:
     axis: 3
     joyNum: 1
   - serializedVersion: 3
-    m_Name: Horizontal1a
-    descriptiveName: Horizontal1a
+    m_Name: Horizontal1
+    descriptiveName: Horizontal1
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: e
@@ -118,8 +118,8 @@ InputManager:
     axis: 0
     joyNum: 1
   - serializedVersion: 3
-    m_Name: Horizontal2a
-    descriptiveName: Horizontal2a
+    m_Name: Horizontal2
+    descriptiveName: Horizontal2
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: e
@@ -134,8 +134,8 @@ InputManager:
     axis: 3
     joyNum: 1
   - serializedVersion: 3
-    m_Name: Shoot1a
-    descriptiveName: Shoot1a
+    m_Name: Shoot1
+    descriptiveName: Shoot1
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: e
@@ -150,13 +150,13 @@ InputManager:
     axis: 3
     joyNum: 1
   - serializedVersion: 3
-    m_Name: Shoot2a
-    descriptiveName: Shoot2a
+    m_Name: Shoot2
+    descriptiveName: Shoot2
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: e
     altNegativeButton: 
-    altPositiveButton: joystick 1 button 5
+    altPositiveButton: joystick 1 button 0
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -166,8 +166,8 @@ InputManager:
     axis: 3
     joyNum: 1
   - serializedVersion: 3
-    m_Name: Vertical1a
-    descriptiveName: Vertical1a
+    m_Name: Vertical1
+    descriptiveName: Vertical1
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: e
@@ -182,8 +182,8 @@ InputManager:
     axis: 8
     joyNum: 1
   - serializedVersion: 3
-    m_Name: Vertical2a
-    descriptiveName: Vertical2a
+    m_Name: Vertical2
+    descriptiveName: Vertical2
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: e
@@ -194,7 +194,7 @@ InputManager:
     sensitivity: 1000
     snap: 0
     invert: 0
-    type: 0
+    type: 2
     axis: 9
     joyNum: 1
   m_UsePhysicalKeys: 1
