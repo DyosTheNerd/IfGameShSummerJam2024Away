@@ -14,6 +14,14 @@ public class SoundEffectsMaster : MonoBehaviour
         instance = this;
     }
 
+    public void stopSoundEffect(string soundEffect)
+    {
+        if(soundEffects.ContainsKey(soundEffect))
+        {
+            soundEffects[soundEffect].stopSoundEffect();
+        }
+    }
+    
 public void playSoundEffect(string soundEffect)
     {
         if(soundEffects.ContainsKey(soundEffect))

@@ -16,7 +16,14 @@ public class SFX : MonoBehaviour
         SoundEffectsMaster.instance.registerSoundEffect(this);   
         audioSource = GetComponent<AudioSource>();
     }
-    
+
+    public void stopSoundEffect()
+    {
+        if (audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
+    }
     
     public void playSoundEffect()
     {
