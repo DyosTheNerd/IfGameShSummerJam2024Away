@@ -104,13 +104,12 @@ void remove_spheres (uint3 id : SV_DispatchThreadID)
         
         float3 pos = mul(RotMatFromQuaternion(shp.rotation), float4(shp.position, 1.0)) * shp.scale ;
 
-        d = opSmoothUnion(d, Sphere(p, shp.position, shp.value1), 0.1);
+        d = opSmoothUnion(d, Sphere(p, shp.position, shp.value1), 0.05);
     }
     
     float tex_d = _VolumeTexture[id];
-    _VolumeTexture[id] = opSmoothSubtraction(d / (_Scale.x ), tex_d, 0.1);// * _Scale.z * _Scale.y ) ) ;
+    _VolumeTexture[id] = opSmoothSubtraction(d / (_Scale.x ), tex_d, 0.05);// * _Scale.z * _Scale.y ) ) ;
 }
-
 
 [numthreads(8,8,8)]
 void add_cubes (uint3 id : SV_DispatchThreadID)

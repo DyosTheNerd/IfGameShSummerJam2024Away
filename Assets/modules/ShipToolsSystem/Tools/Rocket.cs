@@ -39,7 +39,17 @@ public class Rocket : ToolEffect
     }
 
     void OnCollisionEnter(Collision collision){
-        VolumeManager.Instance.RemoveSphere(collision.contacts[0].point, new float3(1,1,1), BlastRadius);
+        VolumeManager.Instance.RemoveSphere(collision.contacts[0].point, new float3(1,1,1), BlastRadius );
+        var colliders = Physics.OverlapSphere(collision.contacts[0].point, BlastRadius * 1.5f, LayerMask.GetMask("DormantPickup"), QueryTriggerInteraction.Collide);
+        foreach(var collider in colliders){
+            collider.GetComponent<PickUpStartup>().StartUp();
+
+        }
+        colliders = Physics.OverlapSphere(collision.contacts[0].point, BlastRadius* 2f, LayerMask.GetMask("Terrain"), QueryTriggerInteraction.Collide);
+        foreach(var collider in colliders){
+            collider.GetComponent<HedronChunkCollider>().SetDirty();
+
+        }
         Destroy(gameObject);
     }
 

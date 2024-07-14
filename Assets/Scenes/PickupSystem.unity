@@ -502,7 +502,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -833,6 +833,60 @@ MonoBehaviour:
     x: 32
     y: 32
     z: 32
+--- !u!1 &1521570566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1521570568}
+  - component: {fileID: 1521570567}
+  m_Layer: 0
+  m_Name: PickUpManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1521570567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521570566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 824e7d166ab690344877fbd0996b9695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickUpPrefab: {fileID: 5034551457695476713, guid: bce2a30a5e6073f43b01115d883d353f,
+    type: 3}
+  Center:
+    x: 32
+    y: 32
+    z: 32
+  NumberOfPickups: 1000
+  RadiusLimits:
+    x: 0
+    y: 25
+--- !u!4 &1521570568
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521570566}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1651252191
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,9 +966,9 @@ MonoBehaviour:
   asteroidFiller: {fileID: -876546973899608171, guid: d1140cd9d5776ee43951a492274df749,
     type: 3}
   resolution:
-    x: 64
-    y: 64
-    z: 64
+    x: 256
+    y: 256
+    z: 256
   scale:
     x: 64
     y: 64
@@ -1300,3 +1354,4 @@ SceneRoots:
   - {fileID: 161550444}
   - {fileID: 1743283209}
   - {fileID: 2058952648}
+  - {fileID: 1521570568}

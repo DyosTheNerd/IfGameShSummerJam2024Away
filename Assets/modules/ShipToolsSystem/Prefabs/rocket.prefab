@@ -76,7 +76,7 @@ MonoBehaviour:
   MaxSpeed: 35
   Acceleration: 120
   LifeSpan: 20
-  BlastRadius: 0.5
+  BlastRadius: 2
   AsteroidCenter:
     x: 32
     y: 32
