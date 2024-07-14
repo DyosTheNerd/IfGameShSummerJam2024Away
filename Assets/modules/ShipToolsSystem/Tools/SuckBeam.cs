@@ -2,17 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SuckBeam : MonoBehaviour
+[RequireComponent(typeof(Collider))]
+public class SuckBeam : ToolEffect
 {
-    // Start is called before the first frame update
-    void Start()
+
+    List<Rigidbody> goldCubes = new List<Rigidbody>();
+
+    public override void Activate(ShipToolManager manager)
     {
-        
+        transform.parent = manager.transform;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Deactivate(ShipToolManager manager)
     {
-        
+        //do nothing
     }
+
+    public void Suck(){
+
+    }
+
+    void OnTriggerEnter(){
+
+    }
+    void OnTriggerExit(){
+
+    }
+
+
 }

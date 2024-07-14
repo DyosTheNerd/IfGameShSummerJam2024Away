@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8080563170757833499}
   - component: {fileID: 7921341346721603879}
   - component: {fileID: 3770410022640129354}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: rocket
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -76,6 +76,7 @@ MonoBehaviour:
   MaxSpeed: 35
   Acceleration: 120
   LifeSpan: 20
+  BlastRadius: 0.5
   AsteroidCenter:
     x: 32
     y: 32
@@ -93,7 +94,7 @@ GameObject:
   - component: {fileID: 5191977979903107491}
   - component: {fileID: 7583939266926316919}
   - component: {fileID: 6308788009836804462}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: model
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -110,7 +111,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8080563170757833499}
@@ -182,7 +183,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
