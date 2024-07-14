@@ -132,10 +132,20 @@ PrefabInstance:
       propertyPath: name
       value: rocket
       objectReference: {fileID: 0}
+    - target: {fileID: 171424465582221856, guid: 986977e817fa79846a31e900a808ab06,
+        type: 3}
+      propertyPath: multiple
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1995669039980215739, guid: 986977e817fa79846a31e900a808ab06,
         type: 3}
       propertyPath: m_Name
       value: SFX Rocket
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640529977722857259, guid: 986977e817fa79846a31e900a808ab06,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.457
       objectReference: {fileID: 0}
     - target: {fileID: 6640529977722857259, guid: 986977e817fa79846a31e900a808ab06,
         type: 3}
@@ -147,11 +157,6 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 84006577a39023a4db99f3e3e135fdd4, type: 3}
-    - target: {fileID: 6945268550240705376, guid: 986977e817fa79846a31e900a808ab06,
-        type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7971738372966724266, guid: 986977e817fa79846a31e900a808ab06,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1415,6 +1420,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6640529977722857259, guid: 986977e817fa79846a31e900a808ab06,
         type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640529977722857259, guid: 986977e817fa79846a31e900a808ab06,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.242
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640529977722857259, guid: 986977e817fa79846a31e900a808ab06,
+        type: 3}
       propertyPath: m_Resource
       value: 
       objectReference: {fileID: 8300000, guid: a47aef2a9f9145840b693df8c226e4d0, type: 3}
@@ -1423,11 +1438,6 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: a47aef2a9f9145840b693df8c226e4d0, type: 3}
-    - target: {fileID: 6945268550240705376, guid: 986977e817fa79846a31e900a808ab06,
-        type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7971738372966724266, guid: 986977e817fa79846a31e900a808ab06,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1478,7 +1488,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
