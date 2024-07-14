@@ -19,13 +19,14 @@ public class SuckBeam : ToolEffect
         transform.parent.position = manager.transform.position; 
         transform.parent.parent = manager.transform;
         
-        SoundEffectsMaster.instance.playSoundEffect("beam");
+        SoundEffectsMaster.playSoundEffect("beam");
     }
 
     public override void Deactivate(ShipToolManager manager)
     {
         Destroy(gameObject.transform.parent.gameObject);
-        SoundEffectsMaster.instance.stopSoundEffect("beam");
+        
+        SoundEffectsMaster.stopSoundEffect("beam");
     }
 
     void FixedUpdate(){
@@ -48,15 +49,15 @@ public class SuckBeam : ToolEffect
             cube.AddVelocity(cube.transform.position - transform.position * SuckPower/math.length(cube.transform.position - transform.position));
     }
     void Get(PickUpMovement cube){
-        gottenCubes.Add(cube);
-        Destroy(cube);
+        Destroy(cube.gameObject);
         PointSystem.Instance.AddCube();
+        SoundEffectsMaster.playSoundEffect("pickup");
     }
 
 
     void OnTriggerEnter(Collider col){
-       if(col.TryGetComponent<PickUpMovement>(out var c))
-            goldCubes.Add(c);
+        if (col.TryGetComponent<PickUpMovement>(out var c))
+            Get(c);
     }
 
     void OnTriggerExit(Collider col){

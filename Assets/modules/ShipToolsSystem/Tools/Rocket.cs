@@ -51,8 +51,8 @@ public class Rocket : ToolEffect
             collider.GetComponent<HedronChunkCollider>().SetDirty();
 
         }
-        SoundEffectsMaster.instance.playSoundEffect("rocket");  
-        
+
+        SoundEffectsMaster.playSoundEffect("rocket");  
         
         Destroy(gameObject);
     }

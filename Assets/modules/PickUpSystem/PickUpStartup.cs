@@ -33,8 +33,9 @@ public class PickUpStartup : MonoBehaviour
     public void TurnOn(){
         gameObject.layer = 8;
         var movement = GetComponent<PickUpMovement>();
-        movement.enabled = true;
-        movement.SetVelocity(math.mul(UnityEngine.Random.rotationUniform, Vector3.up) * 0.3f);
+       movement.enabled = true;
+      
+       movement.SetVelocity(0.0f);
 
     }
 
