@@ -15,9 +15,9 @@ public class SuckBeam : ToolEffect
     public override void Activate(ShipToolManager manager)
     {
         this.manager = manager;
-        transform.parent = manager.transform;
-        transform.rotation = manager.transform.rotation;
-        transform.position = manager.transform.position; 
+        transform.parent.rotation = Quaternion.LookRotation(manager.transform.parent.forward);
+        transform.parent.position = manager.transform.position; 
+        transform.parent.parent = manager.transform;
     }
 
     public override void Deactivate(ShipToolManager manager)

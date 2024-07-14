@@ -15,14 +15,14 @@ public class ShipTool : ScriptableObject
     public void ActivateTool(ShipToolManager manager)
     {
         currentProjectile = Instantiate(ProjectilePrefab);
-        currentProjectile.GetComponent<ToolEffect>().Activate(manager);
+        currentProjectile.GetComponentInChildren<ToolEffect>().Activate(manager);
     }
 
     public void DeactivateTool(ShipToolManager manager)
     {
         if(currentProjectile.IsDestroyed()) return;
         
-        currentProjectile?.GetComponent<ToolEffect>()?.Deactivate(manager);
+        currentProjectile?.GetComponentInChildren<ToolEffect>()?.Deactivate(manager);
         currentProjectile = null;
     }
 
