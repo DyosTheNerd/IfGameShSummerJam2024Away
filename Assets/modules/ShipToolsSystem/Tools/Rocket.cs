@@ -20,6 +20,7 @@ public class Rocket : ToolEffect
         rb = GetComponent<Rigidbody>();
         transform.rotation = Quaternion.LookRotation(manager.GetAim(), AsteroidCenter - (float3)manager.transform.position);
         transform.position = manager.transform.position;
+        
     }
 
     public override void Deactivate(ShipToolManager manager)
@@ -50,6 +51,9 @@ public class Rocket : ToolEffect
             collider.GetComponent<HedronChunkCollider>().SetDirty();
 
         }
+        SoundEffectsMaster.instance.playSoundEffect("rocket");  
+        
+        
         Destroy(gameObject);
     }
 
