@@ -76,7 +76,7 @@ public class ShipToolManager : MonoBehaviour
        else q2 = Quaternion.Inverse(Quaternion.AngleAxis(-aimAxis.x * RotationLimits.x, ShipAimForward));
 
 
-       AimDirection = q1 * q2 * BaseAimDirection;
+       AimDirection = transform.rotation * q1 * q2 * BaseAimDirection;
 
     }
 
