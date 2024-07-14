@@ -18,12 +18,14 @@ public class SuckBeam : ToolEffect
         transform.parent.rotation = Quaternion.LookRotation(manager.transform.parent.forward);
         transform.parent.position = manager.transform.position; 
         transform.parent.parent = manager.transform;
+        
+        SoundEffectsMaster.instance.playSoundEffect("beam");
     }
 
     public override void Deactivate(ShipToolManager manager)
     {
         Destroy(gameObject.transform.parent.gameObject);
-
+        SoundEffectsMaster.instance.stopSoundEffect("beam");
     }
 
     void FixedUpdate(){
