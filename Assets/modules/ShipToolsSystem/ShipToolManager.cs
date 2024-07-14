@@ -97,12 +97,13 @@ public class ShipToolManager : MonoBehaviour
 
     public void ActivateTool(){
         activeTool.ActivateTool(this);
-        Debug.Log("Button Pressed");
+        
+        Debug.Log("Button Pressed" + activeTool.name + playerNumber);
     }
 
     public void DeactivateTool(){
         activeTool.DeactivateTool(this);
-        Debug.Log("Button Unpressed");
+        Debug.Log("Button Unpressed" + activeTool.name + playerNumber);
         
     }
 

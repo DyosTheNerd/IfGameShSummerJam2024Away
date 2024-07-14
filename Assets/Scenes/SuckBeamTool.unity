@@ -158,12 +158,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 158037014}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9b730295645e3b42a84d00ebb8cff36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 
+  playerNumber: 2
   ShipTransform: {fileID: 1743283209}
   activeTool: {fileID: 11400000, guid: a2a485b7fc50fc5479f7c8ba1d404980, type: 2}
   AsteroidCenter:
@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc7ffe1245770904ab5e130dc7788e16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 
+  playerNumber: 1
   MaxSpeed: 1.5
   Acceleration: 0.1
   TurnAcceleration: -0.05
@@ -1101,10 +1101,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc7ffe1245770904ab5e130dc7788e16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 
+  playerNumber: 2
   MaxSpeed: 1.5
-  Acceleration: -0.1
-  TurnAcceleration: 0.05
+  Acceleration: 0.1
+  TurnAcceleration: -0.05
   MaxTurnSpeed: 0.2
   velocity:
     x: 0
@@ -1218,7 +1218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b730295645e3b42a84d00ebb8cff36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 
+  playerNumber: 1
   ShipTransform: {fileID: 161550444}
   activeTool: {fileID: 11400000, guid: 0c83f23abf95d8d4ca85febc63510023, type: 2}
   AsteroidCenter:
