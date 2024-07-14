@@ -55,8 +55,12 @@ public class Rocket : ToolEffect
             collider.GetComponent<HedronChunkCollider>().SetDirty();
 
         }
-        Instantiate(vfx).transform.position = transform.position;
 
+        GameObject go = Instantiate(vfx);
+        go.transform.position = transform.position;
+        VisualEffect vx =  go.GetComponent<VisualEffect>();
+        vx.Play();
+        
         SoundEffectsMaster.playSoundEffect("rocket");  
         
         Destroy(gameObject);
