@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class InputLoggerScript : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
         
@@ -33,6 +30,8 @@ public class InputLoggerScript : MonoBehaviour
     
     void Update()
     {
+
+        return;
         // Log pressed keys
         foreach (KeyCode key in System.Enum.GetValues(typeof(KeyCode)))
         {

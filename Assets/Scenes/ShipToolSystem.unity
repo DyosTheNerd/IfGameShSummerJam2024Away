@@ -1024,8 +1024,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerNumber: 2
   MaxSpeed: 1.5
-  Acceleration: 0.05
-  TurnAcceleration: -0.1
+  Acceleration: 0.1
+  TurnAcceleration: -0.05
   MaxTurnSpeed: 0.2
   velocity:
     x: 0
