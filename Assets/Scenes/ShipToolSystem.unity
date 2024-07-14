@@ -158,12 +158,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 158037014}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9b730295645e3b42a84d00ebb8cff36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actions: {fileID: -944628639613478452, guid: 8b2bad7709afbe440a839c51aaf43298, type: 3}
+  playerNumber: 2
   ShipTransform: {fileID: 1743283209}
   activeTool: {fileID: 11400000, guid: 0c83f23abf95d8d4ca85febc63510023, type: 2}
   AsteroidCenter:
@@ -204,7 +204,6 @@ GameObject:
   m_Component:
   - component: {fileID: 161550444}
   - component: {fileID: 161550441}
-  - component: {fileID: 161550440}
   - component: {fileID: 161550445}
   m_Layer: 0
   m_Name: player1
@@ -213,28 +212,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &161550440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 161550438}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c81792cc2d436647869c130445ae52e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: -20
-  axis:
-    x: 1
-    y: 0
-    z: 0
-  point:
-    x: 32
-    y: 32
-    z: 32
-  changeAxisAfter: 3
 --- !u!65 &161550441
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -285,6 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc7ffe1245770904ab5e130dc7788e16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerNumber: 1
   MaxSpeed: 1.5
   Acceleration: 0.1
   TurnAcceleration: -0.05
@@ -780,6 +758,50 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &1371999568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1371999570}
+  - component: {fileID: 1371999569}
+  m_Layer: 0
+  m_Name: InputLogger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1371999569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371999568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b2df8c909415694eb0602efd734e6c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1371999570
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371999568}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.430134, y: 19.059158, z: 32.249077}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1521254244
 GameObject:
   m_ObjectHideFlags: 0
@@ -1089,7 +1111,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1743283209}
   - component: {fileID: 1743283208}
-  - component: {fileID: 1743283207}
   - component: {fileID: 1743283206}
   m_Layer: 0
   m_Name: player2
@@ -1110,9 +1131,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc7ffe1245770904ab5e130dc7788e16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerNumber: 2
   MaxSpeed: 1.5
-  Acceleration: -0.1
-  TurnAcceleration: 0.05
+  Acceleration: 0.1
+  TurnAcceleration: -0.05
   MaxTurnSpeed: 0.2
   velocity:
     x: 0
@@ -1122,28 +1144,6 @@ MonoBehaviour:
     x: 32
     y: 32
     z: 32
---- !u!114 &1743283207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1743283205}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c81792cc2d436647869c130445ae52e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: -20
-  axis:
-    x: 1
-    y: 0
-    z: 0
-  point:
-    x: 32
-    y: 32
-    z: 32
-  changeAxisAfter: 3
 --- !u!65 &1743283208
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1226,7 +1226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b730295645e3b42a84d00ebb8cff36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actions: {fileID: -944628639613478452, guid: 8b2bad7709afbe440a839c51aaf43298, type: 3}
+  playerNumber: 1
   ShipTransform: {fileID: 161550444}
   activeTool: {fileID: 11400000, guid: 0c83f23abf95d8d4ca85febc63510023, type: 2}
   AsteroidCenter:
@@ -1299,4 +1299,4 @@ SceneRoots:
   - {fileID: 1521254245}
   - {fileID: 161550444}
   - {fileID: 1743283209}
-  - {fileID: 2058952648}
+  - {fileID: 1371999570}

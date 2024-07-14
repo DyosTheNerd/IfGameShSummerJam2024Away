@@ -6,7 +6,7 @@ using Unity.Mathematics;
 public class ShipMovement : MonoBehaviour
 {
 
-
+    public string playerNumber;
     public float MaxSpeed;
     public float Acceleration;
     public float TurnAcceleration;
@@ -26,8 +26,8 @@ public class ShipMovement : MonoBehaviour
 
     void Update(){
         SetInputAxis(new float2(
-            Input.GetAxis("Horizontal"),
-            Input.GetAxis("Vertical")
+            Input.GetAxis("Horizontal"+playerNumber),
+            Input.GetAxis("Vertical"+playerNumber)
         ));
 
 
