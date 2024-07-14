@@ -6,9 +6,8 @@ using UnityEngine.InputSystem;
 public class ShipToolManager : MonoBehaviour
 {
 
-
-    public InputActionAsset actions;
-
+    public string playerNumber;
+    
     public Transform ShipTransform;
     public ShipTool activeTool;
     public float3 AsteroidCenter = new float3(32, 32, 32);
@@ -43,11 +42,11 @@ public class ShipToolManager : MonoBehaviour
         UpdateShipAimVectors();
         Aim(aimAxis);
 
-        if(Input.GetButtonDown("Shoot1")){
+        if(Input.GetButtonDown("Shoot"+this.playerNumber)){
             ActivateTool();
         }
 
-        if(Input.GetButtonUp("Shoot1")){
+        if(Input.GetButtonUp("Shoot"+this.playerNumber)){
             DeactivateTool();
         }
     }
@@ -61,10 +60,8 @@ public class ShipToolManager : MonoBehaviour
     }
 
     void Aim(float2 axis){
-        aimAxis.x = Input.GetAxis("Horizontal");
-        aimAxis.y = Input.GetAxis("Vertical");
-        // aimAxis.x = actions.FindActionMap("ShipAimTest").FindAction("HorizontalAxis").ReadValue<float>();
-        // aimAxis.y = actions.FindActionMap("ShipAimTest").FindAction("VerticalAxis").ReadValue<float>();
+        aimAxis.x = Input.GetAxis("Horizontal"+this.playerNumber);
+        aimAxis.y = Input.GetAxis("Vertical"+this.playerNumber);
        Quaternion q1;
        if(axis.y >= 0.0f)
             q1 = Quaternion.AngleAxis(aimAxis.y * RotationLimits.y, ShipAimRight);
