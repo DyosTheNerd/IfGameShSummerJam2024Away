@@ -24,6 +24,8 @@ public class ShipMovement : MonoBehaviour
     float3 rightAxis;
     float3 upAxis;
 
+    public bool fire = false;
+    
     void Update(){
         SetInputAxis(new float2(
             Input.GetAxis("Horizontal"+playerNumber),
@@ -63,12 +65,14 @@ public class ShipMovement : MonoBehaviour
             velocity /= MaxSpeed;
             velocity = math.clamp(velocity, new float3(-1, -1, -1), new float3(1,1,1));
             velocity *= MaxSpeed;
-
+            fire = true;
         }else if(inputAxis.y <= -0.05f){
             velocity += velocity * inputAxis.y / 2.0f * Time.fixedDeltaTime;
+            fire = false; 
         }
         else{
             velocity -= velocity * 0.05f * Time.fixedDeltaTime;
+            fire = false; 
         }
 
     }
