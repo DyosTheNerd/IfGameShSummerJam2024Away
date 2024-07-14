@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b78a4bf56629ff4ebae1c4c08f37c3a, type: 3}
   m_Name: SuckBeam
   m_EditorClassIdentifier: 
-  ProjectilePrefab: {fileID: 2195126546839139539, guid: f029c9bf5b2908f4fa3a017ae087b245,
+  ProjectilePrefab: {fileID: 6032201015956081222, guid: f029c9bf5b2908f4fa3a017ae087b245,
     type: 3}

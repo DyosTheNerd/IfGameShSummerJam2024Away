@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider))]
 public class SuckBeam : ToolEffect
 {
     List<PickUpMovement> goldCubes = new List<PickUpMovement>();
@@ -48,6 +47,7 @@ public class SuckBeam : ToolEffect
     }
     void Get(PickUpMovement cube){
         gottenCubes.Add(cube);
+        Destroy(cube);
         PointSystem.Instance.AddCube();
     }
 
