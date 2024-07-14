@@ -22,7 +22,7 @@ public class SuckBeam : ToolEffect
 
     public override void Deactivate(ShipToolManager manager)
     {
-        Destroy(gameObject);
+        Destroy(gameObject.transform.parent.gameObject);
 
     }
 
