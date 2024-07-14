@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Mathematics;
+using UnityEngine.Rendering;
 
 //[RequireComponent(typeof(Texture3DBuilder))]
 public class VolumeManager : MonoBehaviour
 {
+
+    public static VolumeManager Instance;
 
     public delegate void OnUpdate();
     public event OnUpdate Updated;
@@ -52,6 +55,8 @@ public class VolumeManager : MonoBehaviour
         shapeBuffer = new GraphicsBuffer(GraphicsBuffer.Target.Structured 
                                             ,GraphicsBuffer.UsageFlags.None,
                                             MaximumShapes ,  sizeof(float) * 12);
+
+        VolumeManager.Instance = this;
     }
 
 

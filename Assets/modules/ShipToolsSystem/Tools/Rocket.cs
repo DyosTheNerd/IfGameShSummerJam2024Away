@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody),
+typeof(Collider))]
 public class Rocket : ToolEffect
 {
     public float MaxSpeed = 100.0f;
     public float Acceleration = 10.0f;
     public float LifeSpan = 20.0f;
+    public float BlastRadius = 1.0f;
     //TODO generalize
     public float3 AsteroidCenter = new float3(32,32,32);
     public Rigidbody rb;
@@ -34,6 +36,11 @@ public class Rocket : ToolEffect
     void Update(){
         LifeSpan -= Time.deltaTime;
         if(LifeSpan<=0 )Destroy(gameObject);
+    }
+
+    void OnCollisionEnter(Collision collision){
+        VolumeManager.Instance.RemoveSphere(collision.contacts[0].point, new float3(1,1,1), BlastRadius);
+        Destroy(gameObject);
     }
 
 

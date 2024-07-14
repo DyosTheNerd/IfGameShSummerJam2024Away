@@ -91,7 +91,6 @@ public class ShipMovement : MonoBehaviour
 
         velocity = transform.rotation * v ;
 
-        //velocity = Quaternion.Inverse(q) * transform.rotation *  velocity;
     }
     private void Turn()
     {   
