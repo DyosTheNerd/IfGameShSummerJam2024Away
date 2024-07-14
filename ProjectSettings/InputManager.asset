@@ -28,14 +28,14 @@ InputManager:
     negativeButton: 
     positiveButton: up
     altNegativeButton: 
-    altPositiveButton: joystick 1 button 4
+    altPositiveButton: 
     gravity: 3
     dead: 0.001
     sensitivity: 3
     snap: 1
     invert: 0
     type: 0
-    axis: 1
+    axis: 2
     joyNum: 1
   - serializedVersion: 3
     m_Name: Shoot1
@@ -44,7 +44,7 @@ InputManager:
     negativeButton: 
     positiveButton: right ctrl
     altNegativeButton: 
-    altPositiveButton: joystick 1 button 5
+    altPositiveButton: 
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -68,7 +68,7 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
-    joyNum: 2
+    joyNum: 1
   - serializedVersion: 3
     m_Name: Vertical2
     descriptiveName: Thruster
@@ -76,15 +76,15 @@ InputManager:
     negativeButton: 
     positiveButton: w
     altNegativeButton: 
-    altPositiveButton: joystick 2 button 4
+    altPositiveButton: 
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
-    snap: 0
+    snap: 1
     invert: 0
     type: 0
-    axis: 1
-    joyNum: 2
+    axis: 2
+    joyNum: 1
   - serializedVersion: 3
     m_Name: Shoot2
     descriptiveName: Shoot 2
@@ -92,7 +92,7 @@ InputManager:
     negativeButton: 
     positiveButton: space
     altNegativeButton: 
-    altPositiveButton: joystick 2 button 5
+    altPositiveButton: joystick 1 button 0
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -100,5 +100,5 @@ InputManager:
     invert: 0
     type: 0
     axis: 3
-    joyNum: 2
+    joyNum: 1
   m_UsePhysicalKeys: 1
