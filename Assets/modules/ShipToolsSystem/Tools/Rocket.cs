@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.VFX;
+//using UnityEngine.VFX;.
 
 [RequireComponent(typeof(Rigidbody),
 typeof(Collider))]
@@ -14,6 +16,8 @@ public class Rocket : ToolEffect
     //TODO generalize
     public float3 AsteroidCenter = new float3(32,32,32);
     public Rigidbody rb;
+
+    public GameObject vfx;
 
     public override void Activate(ShipToolManager manager)
     {
@@ -51,8 +55,8 @@ public class Rocket : ToolEffect
             collider.GetComponent<HedronChunkCollider>().SetDirty();
 
         }
+        Instantiate(vfx).transform.position = transform.position;
         SoundEffectsMaster.instance.playSoundEffect("rocket");  
-        
         
         Destroy(gameObject);
     }
