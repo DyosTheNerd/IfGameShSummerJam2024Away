@@ -51,7 +51,7 @@ public class SuckBeam : ToolEffect
     void Get(PickUpMovement cube){
         Destroy(cube.gameObject);
         PointSystem.Instance.AddCube();
-        SoundEffectsMaster.playSoundEffect("pickup");
+        SoundEffectsMaster.playSoundEffect("point");
     }
 
 
