@@ -82,6 +82,7 @@ MonoBehaviour:
     y: 32
     z: 32
   rb: {fileID: 7921341346721603879}
+  vfx: {fileID: 4092860887924820392, guid: d94d9cba3ab24db4394e68f13b4e4ac4, type: 3}
 --- !u!1 &8536529345285759558
 GameObject:
   m_ObjectHideFlags: 0
