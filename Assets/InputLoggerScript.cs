@@ -30,7 +30,7 @@ public class InputLoggerScript : MonoBehaviour
     
     void Update()
     {
-
+        // I am so proud of jank like this hahahah
         return;
         // Log pressed keys
         foreach (KeyCode key in System.Enum.GetValues(typeof(KeyCode)))

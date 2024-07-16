@@ -6,7 +6,6 @@ using Unity.Mathematics;
 
 public class CameraController : MonoBehaviour
 {
-
     public List<GameObject> Players;
 
     // in  'meters'
@@ -17,7 +16,10 @@ public class CameraController : MonoBehaviour
 
     public float3 LookAtTarget;
 
-
+    public void SetTargets(List<GameObject> targets){
+        Players.Clear();
+        Players.AddRange(targets);
+    }
 
     // Update is called once per frame
     void Update()
@@ -35,8 +37,6 @@ public class CameraController : MonoBehaviour
 
         direction = math.normalize(direction);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(direction, Vector3.up), RotationSpeed * Time.deltaTime);
-
-
     }
 
     void OnDrawGizmosSelected(){
