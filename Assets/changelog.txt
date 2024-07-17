@@ -1,3 +1,11 @@
+### Version 0.1.1 JDW 2024-07-17
+- started with ui doc. 
+  - added timer count down
+  - added and wired up other ui elements in a controller
+- fixed sfx singleton instance implementation
+
+
+
 ### Version 0.1 Post-Jam
 
 - Changed Global Controllers into  Singletons.
