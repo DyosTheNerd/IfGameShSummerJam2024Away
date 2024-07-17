@@ -6,7 +6,7 @@ public class SoundEffectsMaster : MonoBehaviour
     private static SoundEffectsMaster _instance; 
     public static SoundEffectsMaster Instance{
         get{if(_instance == null){Debug.Log("Missing SoundEffectMaster");} return _instance;}
-        set{if(_instance != null){Debug.Log("Extra SoundEffectMaster in scene.");}}
+        private set{if(_instance != null){Debug.Log("Extra SoundEffectMaster in scene.");} _instance = value;}
     }
     
     private Dictionary<string, SFX> soundEffects = new Dictionary<string, SFX>();
