@@ -13,7 +13,7 @@ public class SFX : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SoundEffectsMaster.instance.registerSoundEffect(this);   
+        SoundEffectsMaster.Instance.registerSoundEffect(this);   
         audioSource = GetComponent<AudioSource>();
     }
 

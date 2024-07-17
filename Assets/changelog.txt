@@ -1,0 +1,11 @@
+### Version 0.1 Post-Jam
+
+- Changed Global Controllers into  Singletons.
+    Access with the static member Instance.
+    -- affect systems: 
+        PointSystem
+        Asteroid
+        SoundEffectMaster
+        PickUpManager
+
+- CameraController now has a SetTarget method.

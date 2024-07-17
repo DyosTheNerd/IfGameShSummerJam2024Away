@@ -3,24 +3,24 @@ using UnityEngine;
 
 public class SoundEffectsMaster : MonoBehaviour
 {
-    public static SoundEffectsMaster instance;
-
-    private static bool instanceExists = false;
+    private static SoundEffectsMaster _instance; 
+    public static SoundEffectsMaster Instance{
+        get{if(_instance == null){Debug.Log("Missing SoundEffectMaster");} return _instance;}
+        set{if(_instance != null){Debug.Log("Extra SoundEffectMaster in scene.");}}
+    }
     
     private Dictionary<string, SFX> soundEffects = new Dictionary<string, SFX>();
     
     private void Awake()
     {
-        instance = this;
-        instanceExists = true;
+        Instance = this;
     }
 
     public static void stopSoundEffect(string soundEffect)
     {
-        if (instanceExists)
-        {
-            instance._stopSoundEffect(soundEffect);
-        }
+        if(_instance != null)
+            Instance._stopSoundEffect(soundEffect);
+        
     }
     
     private void _stopSoundEffect(string soundEffect)
@@ -33,9 +33,9 @@ public class SoundEffectsMaster : MonoBehaviour
 
     public static  void playSoundEffect(string sound)
     {
-        if (instanceExists)
+        if (_instance != null)
         {
-            instance._playSoundEffect(sound);
+            Instance._playSoundEffect(sound);
         }
     }
     
@@ -46,7 +46,7 @@ private void _playSoundEffect(string soundEffect)
             soundEffects[soundEffect].playSoundEffect();
         }
     }
-    public void registerSoundEffect( SFX target)
+public void registerSoundEffect( SFX target)
     {
         soundEffects[target.name] = target;
     }

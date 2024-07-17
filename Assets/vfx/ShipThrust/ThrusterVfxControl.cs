@@ -11,7 +11,7 @@ public class ThrusterVfxControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myShipMovement = this.transform.parent.parent.GetComponent<ShipMovement>();
+        myShipMovement = this.GetComponentInParent<ShipMovement>();
         myEffect = GetComponent<VisualEffect>();
     }
 
