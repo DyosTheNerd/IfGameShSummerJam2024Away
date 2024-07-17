@@ -2,31 +2,35 @@
     <engine:VisualElement style="flex-grow: 1; flex-direction: row;">
         <engine:VisualElement name="P1Stats" style="flex-grow: 1; flex-direction: column; height: 446px; width: 50px; max-width: 160px;">
             <engine:VisualElement name="PortraitBox" style="flex-grow: 1; width: 160px; height: 160px; max-width: 160px; max-height: 160px;">
-                <engine:VisualElement name="Portrait" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI/p1.png?fileID=2800000&amp;guid=ffff4e282ef20e940ac7ba9ddf6f7787&amp;type=3#p1&quot;); max-width: 128px; max-height: 128px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 16px; margin-right: 16px; margin-bottom: 16px; margin-left: 16px;" />
+                <engine:VisualElement name="Portrait1" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI/p1.png?fileID=2800000&amp;guid=ffff4e282ef20e940ac7ba9ddf6f7787&amp;type=3#p1&quot;); max-width: 128px; max-height: 128px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 16px; margin-right: 16px; margin-bottom: 16px; margin-left: 16px;" />
             </engine:VisualElement>
             <engine:VisualElement name="ScoreBox" style="flex-grow: 1; max-width: 160px; max-height: 40px;">
-                <engine:Label text="Label" name="Score" data-source="project://database/Assets/modules/ScoringSystem/PointSystemReader.asset?fileID=11400000&amp;guid=f88f1cdcecd0de646b254739b3baa529&amp;type=2#PointSystemReader" data-source-path="text" />
+                <engine:Label text="Label" name="Score1" />
             </engine:VisualElement>
             <engine:VisualElement name="RocketsBox" style="flex-grow: 1; max-width: 160px; max-height: 40px;">
-                <engine:Label text="Label" name="Rockets" />
+                <engine:Label text="Label" name="Rockets1" />
             </engine:VisualElement>
             <engine:VisualElement name="BeamBox" style="flex-grow: 1; max-width: 160px; max-height: 40px;">
-                <engine:Label text="Label" name="Beam" />
+                <engine:Label text="Label" name="Beam1" />
             </engine:VisualElement>
         </engine:VisualElement>
-        <engine:VisualElement name="Filler" style="flex-grow: 1;" />
+        <engine:VisualElement name="Filler" style="flex-grow: 1;">
+            <engine:VisualElement style="flex-grow: 1; max-width: 200px; max-height: 100px; align-items: center; align-self: center; min-width: 200px; min-height: 100px;">
+                <engine:Label text="3:00" name="Timer" />
+            </engine:VisualElement>
+        </engine:VisualElement>
         <engine:VisualElement name="P2Stats" style="flex-grow: 1; width: 10px; max-width: 160px;">
             <engine:VisualElement name="PortraitBox" style="flex-grow: 1; width: 160px; height: 160px; max-width: 160px; max-height: 160px;">
-                <engine:VisualElement name="Portrait" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI/p2.png?fileID=2800000&amp;guid=46c6f2bde24b5cb41a5976b3037982db&amp;type=3#p2&quot;); max-width: 128px; max-height: 128px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 16px; margin-right: 16px; margin-bottom: 16px; margin-left: 16px;" />
+                <engine:VisualElement name="Portrait2" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI/p2.png?fileID=2800000&amp;guid=46c6f2bde24b5cb41a5976b3037982db&amp;type=3#p2&quot;); max-width: 128px; max-height: 128px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 16px; margin-right: 16px; margin-bottom: 16px; margin-left: 16px;" />
             </engine:VisualElement>
             <engine:VisualElement name="ScoreBox" style="flex-grow: 1; max-width: 160px; max-height: 40px;">
-                <engine:Label text="Label" name="Score" />
+                <engine:Label text="Label" name="Score2" />
             </engine:VisualElement>
             <engine:VisualElement name="RocketsBox" style="flex-grow: 1; max-width: 160px; max-height: 40px;">
-                <engine:Label text="Label" name="Rockets" />
+                <engine:Label text="Label" name="Rockets2" />
             </engine:VisualElement>
             <engine:VisualElement name="BeamBox" style="flex-grow: 1; max-width: 160px; max-height: 40px;">
-                <engine:Label text="Label" name="Beam" />
+                <engine:Label text="Label" name="Beam2" />
             </engine:VisualElement>
         </engine:VisualElement>
     </engine:VisualElement>

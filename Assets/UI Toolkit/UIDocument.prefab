@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3476528146125539508}
   - component: {fileID: 5563117428108240261}
+  - component: {fileID: 8379992183848291521}
   m_Layer: 5
   m_Name: UIDocument
   m_TagString: Untagged
@@ -49,3 +50,15 @@ MonoBehaviour:
   sourceAsset: {fileID: 9197481963319205126, guid: d90e63ad692b6254e8a7a80a451552dc,
     type: 3}
   m_SortingOrder: 0
+--- !u!114 &8379992183848291521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7110017002442054579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d0cd0123210f8647ae540e82d608ba4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
