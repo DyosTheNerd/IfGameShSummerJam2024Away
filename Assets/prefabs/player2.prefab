@@ -136,7 +136,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7395021896003645130}
   - component: {fileID: 8076153546148941451}
-  - component: {fileID: 23704073254008388}
   - component: {fileID: 8131322226851043005}
   m_Layer: 0
   m_Name: player2
@@ -155,7 +154,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: -2, y: 32, z: 32}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2582790813243724918}
@@ -183,28 +182,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &23704073254008388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4496260499761302446}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c81792cc2d436647869c130445ae52e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: -20
-  axis:
-    x: 1
-    y: 0
-    z: 0
-  point:
-    x: 32
-    y: 32
-    z: 32
-  changeAxisAfter: 3
 --- !u!114 &8131322226851043005
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -22,7 +22,11 @@ public class ShipTool : ScriptableObject
     {
         if(currentProjectile.IsDestroyed()) return;
         
-        currentProjectile?.GetComponentInChildren<ToolEffect>()?.Deactivate(manager);
+        var tool = currentProjectile.GetComponentInChildren<ToolEffect>();
+
+        if(tool != null)
+            tool.Deactivate(manager);
+            
         currentProjectile = null;
     }
 

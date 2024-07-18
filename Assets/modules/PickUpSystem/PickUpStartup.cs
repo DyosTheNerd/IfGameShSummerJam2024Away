@@ -8,34 +8,24 @@ using System;
 public class PickUpStartup : MonoBehaviour
 {
 
-    public float3 finalPosition;
-    public float3 AsteroidCenter = new float3(32,32,32);
+    private float3 finalPosition;
+    public float3 FinalPosition { get => finalPosition; set => finalPosition = value; }
 
     IEnumerator StartUpRoutine(){
         enabled = false;
-        while(math.length((float3)transform.position - finalPosition) > 0.5f){
+        while(math.length((float3)transform.position - FinalPosition) > 0.5f){
 
-            transform.Translate((finalPosition -(float3)transform.position) * 0.8f * Time.fixedDeltaTime);
+            transform.Translate((FinalPosition -(float3)transform.position) * 0.8f * Time.fixedDeltaTime);
 
             yield return new WaitForFixedUpdate(); 
         }
-        TurnOn();
     }
 
     public void StartUp(){
-        var upAxis = math.normalize((float3)transform.position + UnityEngine.Random.value * 3.0f - AsteroidCenter);
+        var upAxis = math.normalize((float3)transform.position + UnityEngine.Random.value * 3.0f - Asteroid.Instance.Center);
         
-        finalPosition=  new float3(32, 32, 32) + upAxis * 34.0f;
+        FinalPosition=  Asteroid.Instance.Center + upAxis * 34.0f;
         StartCoroutine(StartUpRoutine());
-
-    }
-
-    public void TurnOn(){
-        gameObject.layer = 8;
-        var movement = GetComponent<PickUpMovement>();
-       movement.enabled = true;
-      
-       movement.SetVelocity(0.0f);
 
     }
 

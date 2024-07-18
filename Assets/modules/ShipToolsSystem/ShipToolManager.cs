@@ -7,21 +7,19 @@ public class ShipToolManager : MonoBehaviour
 {
 
     public string playerNumber;
-    
-    public Transform ShipTransform;
+    public float4 RotationLimits;
     public ShipTool activeTool;
-    public float3 AsteroidCenter = new float3(32, 32, 32);
+    
 
-    // offset on vectors ShipForward and cross(ShipForward, ShipForward - PlanetCenter)
     public float3 BaseAimDirection;
     private float3 AimDirection;
 
-    public float3 ShipAimForward;
-    public float3 ShipAimRight;
-    public float3 ShipAimCenter;
-    public float4 RotationLimits;
+    private float3 ShipAimForward;
+    private float3 ShipAimRight;
+    private float3 ShipAimCenter;
 
-    public float2 aimAxis;
+    private Transform ShipTransform;
+    private float2 aimAxis;
 
     public float3 GetAim(){
         return AimDirection;
@@ -51,10 +49,8 @@ public class ShipToolManager : MonoBehaviour
         }
     }
 
-   // public float3 
-
     void UpdateShipAimVectors(){
-        ShipAimCenter = math.normalize((float3)ShipTransform.position - AsteroidCenter);
+        ShipAimCenter = math.normalize((float3)ShipTransform.position - Asteroid.Instance.Center);
         ShipAimForward = math.normalize(transform.forward);
         ShipAimRight = math.cross(ShipAimCenter, ShipAimForward);
     }
@@ -97,13 +93,10 @@ public class ShipToolManager : MonoBehaviour
 
     public void ActivateTool(){
         activeTool.ActivateTool(this);
-        
-        Debug.Log("Button Pressed" + activeTool.name + playerNumber);
     }
 
     public void DeactivateTool(){
         activeTool.DeactivateTool(this);
-        Debug.Log("Button Unpressed" + activeTool.name + playerNumber);
         
     }
 

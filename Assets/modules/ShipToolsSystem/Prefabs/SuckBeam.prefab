@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SuckPower: 1
-  MinDistance: 0
+  MinDistance: 5
 --- !u!135 &4352787065235981110
 SphereCollider:
   m_ObjectHideFlags: 0

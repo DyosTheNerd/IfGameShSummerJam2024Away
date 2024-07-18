@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class SuckBeam : ToolEffect
 {
-    List<PickUpMovement> goldCubes = new List<PickUpMovement>();
-    List<PickUpMovement> gottenCubes = new List<PickUpMovement>();
+    List<PickUpStartup> goldCubes = new List<PickUpStartup>();
+    List<PickUpStartup> gottenCubes = new List<PickUpStartup>();
     ShipToolManager manager;
 
     public float SuckPower;
@@ -40,15 +40,15 @@ public class SuckBeam : ToolEffect
     }
 
 
-    public void Suck(PickUpMovement cube){
+    public void Suck(PickUpStartup cube){
             var l = math.length(cube.transform.position - transform.position);
             if(l < MinDistance){
                 Get(cube);
                 return;
             }
-            cube.AddVelocity(cube.transform.position - transform.position * SuckPower/math.length(cube.transform.position - transform.position));
+            //cube.AddVelocity(cube.transform.position - transform.position * SuckPower/math.length(cube.transform.position - transform.position));
     }
-    void Get(PickUpMovement cube){
+    void Get(PickUpStartup cube){
         Destroy(cube.gameObject);
         PointSystem.Instance.AddCube();
         SoundEffectsMaster.playSoundEffect("point");
@@ -56,12 +56,12 @@ public class SuckBeam : ToolEffect
 
 
     void OnTriggerEnter(Collider col){
-        if (col.TryGetComponent<PickUpMovement>(out var c))
+        if (col.TryGetComponent<PickUpStartup>(out var c))
             Get(c);
     }
 
     void OnTriggerExit(Collider col){
-       if(col.TryGetComponent<PickUpMovement>(out var c))
+       if(col.TryGetComponent<PickUpStartup>(out var c))
             goldCubes.Remove(c);
     }
 

@@ -1,9 +1,30 @@
+### Version 0.1.2 AA 2024-07-18
+- further refactoring.
+    - CameraController
+      -- made camera less dependant on manual configuration
+      -- setting Radius and LookAt should reposition camera accordingly (but i would like opinions on the implementation)
+      -- changed camera to an Orthographic projection.
+      -- camera now has initialValues that can be set in the inspector.
+    - Deleted the dummyPlayer.cs script (it was just to test the camera.)
+    - Deleted the PickUpMovement.cs script. (it was 90% the player movement script with less stuff)
+        --this included removing some references to it from several other scripts.
+    - ShipToolManager
+      -- made private all the private sub-vector calculations.
+      -- now uses Asteroid.Instance.Center to compute some of the sub vectors.
+
+
+- trying to fix some of the nausea issues
+  - removed stars from background
+  - added a polar axis to still give a sense of where up is. I can prettify later
+  -- some of the camera changes were due to this also.
+
+
+
 ### Version 0.1.1 JDW 2024-07-17
 - started with ui doc. 
   - added timer count down
   - added and wired up other ui elements in a controller
 - fixed sfx singleton instance implementation
-
 
 
 ### Version 0.1 Post-Jam

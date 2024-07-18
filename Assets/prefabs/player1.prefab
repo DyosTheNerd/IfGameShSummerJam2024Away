@@ -300,7 +300,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2466734388585301413}
   - component: {fileID: 6613916272734318460}
-  - component: {fileID: 2597029655351610047}
   - component: {fileID: 3455777778477843417}
   m_Layer: 0
   m_Name: player1
@@ -319,7 +318,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 32, y: 32, z: -2}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3232697347674768853}
@@ -347,28 +346,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2597029655351610047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8635880741029174511}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c81792cc2d436647869c130445ae52e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: -20
-  axis:
-    x: 1
-    y: 0
-    z: 0
-  point:
-    x: 32
-    y: 32
-    z: 32
-  changeAxisAfter: 3
 --- !u!114 &3455777778477843417
 MonoBehaviour:
   m_ObjectHideFlags: 0
