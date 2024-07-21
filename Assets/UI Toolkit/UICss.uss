@@ -1,0 +1,28 @@
+.statsbox {
+    flex-grow: 1;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    -unity-background-image-tint-color: rgba(119, 119, 119, 0.67);
+    background-color: rgba(43, 43, 43, 0.3);
+    max-height: 30%;
+}
+
+.boxedtext {
+    color: rgb(212, 212, 212);
+    -unity-font-definition: url("project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&guid=06299e4f7e322b1498f4f4b46f9909c1&type=3#NotInter-Regular");
+    -unity-font-style: bold;
+}
+
+.playerroot {
+    flex-grow: 1;
+    flex-direction: column;
+    height: 446px;
+    width: 50px;
+    max-width: 160px;
+}

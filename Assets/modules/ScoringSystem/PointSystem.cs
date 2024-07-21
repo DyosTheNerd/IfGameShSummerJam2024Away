@@ -9,7 +9,7 @@ public class PointSystem : MonoBehaviour
     
     public static PointSystem Instance;
 
-    public void Start(){PointSystem.Instance = this;}
+    public void Awake(){PointSystem.Instance = this;}
 
     public int TotalCubes;
 

@@ -18,7 +18,7 @@ public class UiDocumentController : MonoBehaviour
     
     private VisualElement root;
     // Start is called before the first frame update
-    void OnEnable()
+    void Start()
     {
         root = GetComponent<UIDocument>().rootVisualElement;
         score1 = root.Q<Label>("Score1");
