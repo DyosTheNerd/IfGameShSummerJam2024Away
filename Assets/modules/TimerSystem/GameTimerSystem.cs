@@ -24,6 +24,8 @@ public class GameTimerSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        timeRemaining = ConfigurationManger.Instance.gameLengthInSeconds;
+        OnTimerTick?.Invoke(timeRemaining);
         
         // start coroutine to count down the time every second
         StartCoroutine(CountDown());

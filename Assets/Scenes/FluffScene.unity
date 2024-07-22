@@ -906,6 +906,60 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2038278309945262221}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1846478862
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1846478864}
+  - component: {fileID: 1846478863}
+  m_Layer: 0
+  m_Name: GameBalance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1846478863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846478862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a0de272f0218d34e8c08ea170ad6569, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameLengthInSeconds: 180
+  scoreShoot: 1
+  scoreMine: 10
+  scoreCollect: 20
+  scoreReturn: 100
+  maxSpeed: 10
+  maxRotation: 10
+  maxRockets: 5
+  maxBeam: 5
+--- !u!4 &1846478864
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846478862}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1960893984}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1904072580
 GameObject:
   m_ObjectHideFlags: 0
@@ -1053,12 +1107,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1960893982}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1846478864}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &484981173378958748
 PrefabInstance:
@@ -1376,6 +1430,6 @@ SceneRoots:
   - {fileID: 635235406}
   - {fileID: 823215890}
   - {fileID: 4984525154827329024}
-  - {fileID: 1960893984}
   - {fileID: 1904072584}
   - {fileID: 899190836}
+  - {fileID: 1846478864}

@@ -45,10 +45,16 @@ public class UiDocumentController : MonoBehaviour
         // subscribe to GameTimer onTimerTick event with a lambda function
         GameTimerSystem.instance.OnTimerTick += (remainingSeconds) =>
         {
-            timer.text = remainingSeconds / 60 + ":" + remainingSeconds % 60;
+            timer.text =  toTwoDigitsString(remainingSeconds / 60) + ":" + toTwoDigitsString(remainingSeconds % 60);
         };
         
     }
 
+    
+    private string toTwoDigitsString(int number)
+    {
+        return number < 10 ? "0" + number : number.ToString();
+    }
+    
 
 }

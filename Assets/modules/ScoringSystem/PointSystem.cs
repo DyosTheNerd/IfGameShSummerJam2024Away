@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class PointSystem : MonoBehaviour
 {
-    Dictionary<string, int> scoreValues = new Dictionary<string, int>(){{"shoot", 1}, {"mine", 10}, {"collect", 20}, {"return", 100}};
+    private Dictionary<string, int> scoreValues;
     
     
     public static PointSystem Instance;
 
     public void Awake(){PointSystem.Instance = this;}
 
+    public void Start()
+    {
+        ConfigurationManger config = ConfigurationManger.Instance;
+        scoreValues = new Dictionary<string, int>(){{"shoot", config.scoreShoot}, {"mine", config.scoreMine}, {"collect", config.scoreCollect}, {"return", config.scoreReturn}};
+    }
+    
     public int TotalCubes;
 
     public int scoreP1 = 0;
