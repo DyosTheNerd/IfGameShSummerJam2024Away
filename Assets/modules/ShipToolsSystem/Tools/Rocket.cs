@@ -61,10 +61,18 @@ public class Rocket : ToolEffect
         VisualEffect vx =  go.GetComponent<VisualEffect>();
         vx.Play();
         
-        SoundEffectsMaster.playSoundEffect("rocket");  
+        SoundEffectsMaster.playSoundEffect("rocket");
+
+        if (!accountedFor)
+        {
+            PointSystem.Instance.AddScore(manager.playerNumber, "shoot");
+            accountedFor = true;
+        }
+        
         
         Destroy(gameObject);
     }
 
+    bool accountedFor = false;
 
 }

@@ -15,7 +15,9 @@ public class ShipTool : ScriptableObject
     public void ActivateTool(ShipToolManager manager)
     {
         currentProjectile = Instantiate(ProjectilePrefab);
-        currentProjectile.GetComponentInChildren<ToolEffect>().Activate(manager);
+        ToolEffect effect = currentProjectile.GetComponentInChildren<ToolEffect>();
+        effect.SetToolManager(manager);
+        effect.Activate(manager);
     }
 
     public void DeactivateTool(ShipToolManager manager)

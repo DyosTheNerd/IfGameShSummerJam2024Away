@@ -48,6 +48,15 @@ public class UiDocumentController : MonoBehaviour
             timer.text =  toTwoDigitsString(remainingSeconds / 60) + ":" + toTwoDigitsString(remainingSeconds % 60);
         };
         
+        PointSystem.Instance.OnScoreChangeHandler += (player, score) =>
+        {
+            if(player == 1){
+                score1.text = score.ToString();
+            }else{
+                score2.text = score.ToString();
+            }
+        };
+        
     }
 
     

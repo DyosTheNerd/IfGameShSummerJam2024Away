@@ -1,3 +1,6 @@
+## Version 0.1.5 JDW 2024-07-22
+- added simple scoring: when rocket hits, player shooting the rocket gets a point.
+
 ## Version 0.1.4 JDW 2024-07-22
 - centralized some gameplay constants
 - countdown now always formatted xy:zw

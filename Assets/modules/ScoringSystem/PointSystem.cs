@@ -10,6 +10,11 @@ public class PointSystem : MonoBehaviour
     public static PointSystem Instance;
 
     public void Awake(){PointSystem.Instance = this;}
+    
+    // event to be triggered when points change
+    public delegate void OnScoreChange(int player, int score);
+    public event OnScoreChange OnScoreChangeHandler;
+    
 
     public void Start()
     {
@@ -32,8 +37,10 @@ public class PointSystem : MonoBehaviour
         
         if(player == 1){
             scoreP1+=value;
+            OnScoreChangeHandler?.Invoke(1, scoreP1);
         }else{
             scoreP2+=value;
+            OnScoreChangeHandler?.Invoke(2, scoreP2);
         }
     }
     

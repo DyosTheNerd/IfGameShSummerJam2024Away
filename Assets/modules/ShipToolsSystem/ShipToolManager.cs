@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class ShipToolManager : MonoBehaviour
 {
 
-    public string playerNumber;
+    public int playerNumber;
     public float4 RotationLimits;
     public ShipTool activeTool;
     
@@ -40,11 +40,11 @@ public class ShipToolManager : MonoBehaviour
         UpdateShipAimVectors();
         Aim(aimAxis);
 
-        if(Input.GetButtonDown("Shoot"+this.playerNumber)){
+        if(Input.GetButtonDown("Shoot" + playerNumber)){
             ActivateTool();
         }
 
-        if(Input.GetButtonUp("Shoot"+this.playerNumber)){
+        if(Input.GetButtonUp("Shoot" + playerNumber)){
             DeactivateTool();
         }
     }
@@ -56,8 +56,8 @@ public class ShipToolManager : MonoBehaviour
     }
 
     void Aim(float2 axis){
-        aimAxis.x = Input.GetAxis("Horizontal"+this.playerNumber);
-        aimAxis.y = Input.GetAxis("Vertical"+this.playerNumber);
+        aimAxis.x = Input.GetAxis("Horizontal" + playerNumber);
+        aimAxis.y = Input.GetAxis("Vertical" + playerNumber);
        Quaternion q1;
        if(axis.y >= 0.0f)
             q1 = Quaternion.AngleAxis(aimAxis.y * RotationLimits.y, ShipAimRight);
