@@ -11,6 +11,8 @@ public class PickUpStartup : MonoBehaviour
     private float3 finalPosition;
     public float3 FinalPosition { get => finalPosition; set => finalPosition = value; }
 
+    private bool scored = false;
+    
     IEnumerator StartUpRoutine(){
         enabled = false;
         while(math.length((float3)transform.position - FinalPosition) > 0.5f){
@@ -26,7 +28,13 @@ public class PickUpStartup : MonoBehaviour
         
         FinalPosition=  Asteroid.Instance.Center + upAxis * 34.0f;
         StartCoroutine(StartUpRoutine());
-
     }
+
+    public void score(int playerId){
+        if(scored)return;
+        PointSystem.Instance.AddScore(playerId, "collect");
+        scored = true;
+    }
+    
 
 }

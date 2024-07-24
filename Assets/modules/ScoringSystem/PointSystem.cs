@@ -34,6 +34,7 @@ public class PointSystem : MonoBehaviour
     public void AddScore(int player, string scoreType){
         
         int value = scoreValues[scoreType];
+       
         
         if(player == 1){
             scoreP1+=value;
