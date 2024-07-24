@@ -9,7 +9,7 @@ public class Asteroid : MonoBehaviour
     private static Asteroid _instance;
     public static Asteroid Instance { 
         get{if(_instance == null){Debug.Log("Missing Asteroid");} return _instance;}
-        set{if(_instance != null){Debug.Log("Extra Asteroid in scene.");}}
+        set{if(_instance != null){Debug.Log("Extra Asteroid in scene.");} else { _instance = value;}}
     }
 
     private float3 _center = new float3(32,32,32);

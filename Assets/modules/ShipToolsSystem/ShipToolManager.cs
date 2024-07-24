@@ -34,20 +34,32 @@ public class ShipToolManager : MonoBehaviour
         BaseAimDirection = math.normalize(BaseAimDirection);
     }
 
+
     // Update is called once per frame
     void Update()
     {
         UpdateShipAimVectors();
         Aim(aimAxis);
+    }
 
-        if(Input.GetButtonDown("Shoot"+this.playerNumber)){
+
+    void BindControls()
+    {
+        InputActionMap  actions = GetComponentInParent<PlayerInput>()?.actions.FindActionMap("ShipControls");
+        if(actions == null) return;
+        actions.FindAction("ShootMain").started += ShootBinding;
+        actions.FindAction("ShootMain").canceled += ShootBinding;
+    }
+
+    public void ShootBinding(InputAction.CallbackContext context){
+        if(context.started){
             ActivateTool();
-        }
-
-        if(Input.GetButtonUp("Shoot"+this.playerNumber)){
+        } else if(context.canceled){
             DeactivateTool();
         }
     }
+
+
 
     void UpdateShipAimVectors(){
         ShipAimCenter = math.normalize((float3)ShipTransform.position - Asteroid.Instance.Center);
@@ -56,8 +68,8 @@ public class ShipToolManager : MonoBehaviour
     }
 
     void Aim(float2 axis){
-        aimAxis.x = Input.GetAxis("Horizontal"+this.playerNumber);
-        aimAxis.y = Input.GetAxis("Vertical"+this.playerNumber);
+        // aimAxis.x = Input.GetAxis("Horizontal"+this.playerNumber);
+        // aimAxis.y = Input.GetAxis("Vertical"+this.playerNumber);
        Quaternion q1;
        if(axis.y >= 0.0f)
             q1 = Quaternion.AngleAxis(aimAxis.y * RotationLimits.y, ShipAimRight);

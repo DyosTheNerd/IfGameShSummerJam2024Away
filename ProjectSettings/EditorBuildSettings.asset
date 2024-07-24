@@ -11,5 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FluffScene.unity
     guid: 566dae16550de1a4cb0418b0ee9a5e15
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: b5ee050adb511ed48b388d0199de40eb,
+      type: 2}
   m_UseUCBPForAssetBundles: 0

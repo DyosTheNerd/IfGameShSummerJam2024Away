@@ -1,3 +1,21 @@
+### Version 0.1.2.1 2024-07-24  (INPUT BRANCH)
+  -- Deactivated the Old Input Manager from the project.
+  -- Added Control Schemes for: 
+    --- Switch Pro Controllers
+    --- XBox Controllers
+    --- Playstation Controllers
+    --- Generic Gamepads (???)
+    --- Keyboard Left (WASD)
+    --- Keyboard Right (Arrows)
+
+  -- Refactored PlayerMovement and ShipToolManager to use the PlayerInput component.
+  -- Added a StartTheGame scene that does Binding of users and devices.
+
+  -- Started a PlayerData module to track Player information over time. Ideally we bind a "User" to a set of player parameters and devices.
+  -- Added Temp UI stuff just to get the StartTheGame scene.
+
+
+
 ### Version 0.1.2 AA 2024-07-18
 - further refactoring.
     - CameraController

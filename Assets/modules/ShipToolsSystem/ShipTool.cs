@@ -20,7 +20,7 @@ public class ShipTool : ScriptableObject
 
     public void DeactivateTool(ShipToolManager manager)
     {
-        if(currentProjectile.IsDestroyed()) return;
+        if(currentProjectile == null) return;
         
         var tool = currentProjectile.GetComponentInChildren<ToolEffect>();
 
