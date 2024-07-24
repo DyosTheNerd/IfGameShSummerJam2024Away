@@ -43,9 +43,9 @@ public class ShipToolManager : MonoBehaviour
     }
 
 
-    void BindControls()
+    public void BindControls(PlayerInput input)
     {
-        InputActionMap  actions = GetComponentInParent<PlayerInput>()?.actions.FindActionMap("ShipControls");
+        InputActionMap  actions = input.actions.FindActionMap("ShipControls");
         if(actions == null) return;
         actions.FindAction("ShootMain").started += ShootBinding;
         actions.FindAction("ShootMain").canceled += ShootBinding;

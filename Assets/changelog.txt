@@ -10,11 +10,17 @@
 
   -- Refactored PlayerMovement and ShipToolManager to use the PlayerInput component.
   -- Added a StartTheGame scene that does Binding of users and devices.
+      --- Press Shoot on the devices you wanna use. (square, Y, X, shift keys)
+
+  -- PlayerManager class is responsible for managing Players over the duration of the play session.
+   --- For example, keeping track of active players.
+
+   --- Currently, it handles scene transition into game when lobby is full. (not ideal. but we dont have a game state controller yet) <<----
 
   -- Started a PlayerData module to track Player information over time. Ideally we bind a "User" to a set of player parameters and devices.
   -- Added Temp UI stuff just to get the StartTheGame scene.
 
-
+  -- Created a Placeholder ShipFactory class.
 
 ### Version 0.1.2 AA 2024-07-18
 - further refactoring.

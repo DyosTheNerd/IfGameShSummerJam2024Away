@@ -38,9 +38,9 @@ public class ShipMovement : MonoBehaviour
 
     }
     
-    void BindControls()
+    public void BindControls(PlayerInput input)
     {
-        InputActionMap  actions = GetComponent<PlayerInput>().actions.FindActionMap("ShipControls");
+        InputActionMap  actions = input.actions.FindActionMap("ShipControls");
         actions.FindAction("Thrust").performed += ThrustBinding;
         actions.FindAction("Turn").performed += TurnBinding;
     }
