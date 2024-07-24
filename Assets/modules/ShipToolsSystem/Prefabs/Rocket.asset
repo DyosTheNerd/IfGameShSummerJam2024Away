@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b78a4bf56629ff4ebae1c4c08f37c3a, type: 3}
   m_Name: Rocket
   m_EditorClassIdentifier: 
+  ammo: 0
+  maxAmmo: 100
   ProjectilePrefab: {fileID: 3494767114120980791, guid: 0f86fa87d26b83a4bb2f324645d506d6,
     type: 3}
