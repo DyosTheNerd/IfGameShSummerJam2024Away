@@ -26,6 +26,13 @@ public class ShipMovement : MonoBehaviour
 
     public bool fire = false; //???
 
+    void Start(){
+        SetOrbitCenter(Asteroid.Instance.Center);
+    }
+
+    public void SetOrbitCenter(float3 center){
+        OrbitCenter = center;
+    }
 
     void FixedUpdate()
     {
@@ -41,8 +48,12 @@ public class ShipMovement : MonoBehaviour
     public void BindControls(PlayerInput input)
     {
         InputActionMap  actions = input.actions.FindActionMap("ShipControls");
+
         actions.FindAction("Thrust").performed += ThrustBinding;
+        actions.FindAction("Thrust").canceled += ThrustBinding; // sets axis to 0 (basically)
+
         actions.FindAction("Turn").performed += TurnBinding;
+        actions.FindAction("Turn").canceled += TurnBinding; // sets axis to 0 (basically)
     }
 
     public void TurnBinding(InputAction.CallbackContext context){
