@@ -4,13 +4,24 @@ using UnityEngine;
 
 public class PointSystem : MonoBehaviour
 {
-    Dictionary<string, int> scoreValues = new Dictionary<string, int>(){{"shoot", 1}, {"mine", 10}, {"collect", 20}, {"return", 100}};
+    private Dictionary<string, int> scoreValues;
     
     
     public static PointSystem Instance;
 
-    public void Start(){PointSystem.Instance = this;}
+    public void Awake(){PointSystem.Instance = this;}
+    
+    // event to be triggered when points change
+    public delegate void OnScoreChange(int player, int score);
+    public event OnScoreChange OnScoreChangeHandler;
+    
 
+    public void Start()
+    {
+        ConfigurationManger config = ConfigurationManger.Instance;
+        scoreValues = new Dictionary<string, int>(){{"shoot", config.scoreShoot}, {"mine", config.scoreMine}, {"collect", config.scoreCollect}, {"return", config.scoreReturn}};
+    }
+    
     public int TotalCubes;
 
     public int scoreP1 = 0;
@@ -26,8 +37,10 @@ public class PointSystem : MonoBehaviour
         
         if(player == 1){
             scoreP1+=value;
+            OnScoreChangeHandler?.Invoke(1, scoreP1);
         }else{
             scoreP2+=value;
+            OnScoreChangeHandler?.Invoke(2, scoreP2);
         }
     }
     

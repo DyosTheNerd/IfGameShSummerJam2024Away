@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class ShipToolManager : MonoBehaviour
 {
 
-    public string playerNumber;
+    public int playerNumber;
     public float4 RotationLimits;
     public ShipTool activeTool;
     
