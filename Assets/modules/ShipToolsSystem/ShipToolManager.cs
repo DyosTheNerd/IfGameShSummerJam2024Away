@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
@@ -8,8 +9,14 @@ public class ShipToolManager : MonoBehaviour
 
     public int playerNumber;
     public float4 RotationLimits;
-    public ShipTool activeTool;
+
+    public ShipTool[] tools;
+
+    public int[] ammoReserves;
     
+    public bool isShooting = false;
+    
+    public int currentToolIndex = 0;
 
     public float3 BaseAimDirection;
     private float3 AimDirection;
@@ -25,6 +32,8 @@ public class ShipToolManager : MonoBehaviour
         return AimDirection;
     }
 
+    
+    
 
     // Start is called before the first frame update
     void Awake()
@@ -33,6 +42,16 @@ public class ShipToolManager : MonoBehaviour
 
         BaseAimDirection = math.normalize(BaseAimDirection);
     }
+
+    private void Start()
+    {
+        ammoReserves = new int[tools.Length];
+        for (int i = 0; i < tools.Length; i++)
+        {
+            ammoReserves[i] = tools[i].maxAmmo;
+        }
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -47,6 +66,21 @@ public class ShipToolManager : MonoBehaviour
         if(Input.GetButtonUp("Shoot" + playerNumber)){
             DeactivateTool();
         }
+    }
+
+    public void FixedUpdate()
+    {
+        if(isShooting)
+        {
+            ammoReserves[currentToolIndex] -= tools[currentToolIndex].constAmmoLoss;
+
+            if (ammoReserves[currentToolIndex] <= 0)
+            {
+                DeactivateTool();
+            }
+        }
+        
+        
     }
 
     void UpdateShipAimVectors(){
@@ -91,12 +125,25 @@ public class ShipToolManager : MonoBehaviour
 
     }
 
+    
+    
     public void ActivateTool(){
-        activeTool.ActivateTool(this);
+        if (ammoReserves[currentToolIndex] < tools[currentToolIndex].activationCost || ammoReserves[currentToolIndex] <= 0) return;
+        
+        isShooting = true;
+        ammoReserves[currentToolIndex] -= tools[currentToolIndex].activationCost;
+        
+        
+        tools[currentToolIndex].ActivateTool(this);
     }
 
-    public void DeactivateTool(){
-        activeTool.DeactivateTool(this);
+    public void DeactivateTool()
+    {
+        if (isShooting)
+        {
+            tools[currentToolIndex].DeactivateTool(this);
+            isShooting = false;    
+        }
         
     }
 

@@ -253,36 +253,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 2
-  ShipTransform: {fileID: 7395021896003645130}
-  activeTool: {fileID: 11400000, guid: a2a485b7fc50fc5479f7c8ba1d404980, type: 2}
-  AsteroidCenter:
-    x: 32
-    y: 32
-    z: 32
-  BaseAimDirection:
-    x: 0
-    y: 0
-    z: 1
-  ShipAimForward:
-    x: 0
-    y: 0
-    z: 0
-  ShipAimRight:
-    x: 0
-    y: 0
-    z: 0
-  ShipAimCenter:
-    x: 0
-    y: 0
-    z: 0
   RotationLimits:
     x: 0
     y: 15
     z: 0
     w: 0
-  aimAxis:
+  tools:
+  - {fileID: 11400000, guid: 0c83f23abf95d8d4ca85febc63510023, type: 2}
+  - {fileID: 11400000, guid: a2a485b7fc50fc5479f7c8ba1d404980, type: 2}
+  ammoReserves: 
+  isShooting: 0
+  currentToolIndex: 0
+  BaseAimDirection:
     x: 0
     y: 0
+    z: 1
 --- !u!1 &8846929993592458174
 GameObject:
   m_ObjectHideFlags: 0
