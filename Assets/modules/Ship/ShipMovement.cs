@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Mathematics;
+using UnityEngine.InputSystem;
 
 public class ShipMovement : MonoBehaviour
 {
-
     public string playerNumber;
     public float MaxSpeed;
     public float Acceleration;
@@ -24,22 +24,16 @@ public class ShipMovement : MonoBehaviour
     float3 rightAxis;
     float3 upAxis;
 
-    public bool fire = false;
-    
-    void Update(){
-        SetInputAxis(new float2(
-            Input.GetAxis("Horizontal"+playerNumber),
-            Input.GetAxis("Vertical"+playerNumber)
-        ));
+    public bool fire = false; //???
 
-
+    void Start(){
+        SetOrbitCenter(Asteroid.Instance.Center);
     }
 
-    public void SetInputAxis(float2 axis){
-        inputAxis = axis ;
+    public void SetOrbitCenter(float3 center){
+        OrbitCenter = center;
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         
@@ -49,7 +43,29 @@ public class ShipMovement : MonoBehaviour
         MoveForward();
         Turn();
 
+    }
+    
+    public void BindControls(PlayerInput input)
+    {
+        InputActionMap  actions = input.actions.FindActionMap("ShipControls");
 
+        actions.FindAction("Thrust").performed += ThrustBinding;
+        actions.FindAction("Thrust").canceled += ThrustBinding; // sets axis to 0 (basically)
+
+        actions.FindAction("Turn").performed += TurnBinding;
+        actions.FindAction("Turn").canceled += TurnBinding; // sets axis to 0 (basically)
+    }
+
+    public void TurnBinding(InputAction.CallbackContext context){
+        inputAxis.x = context.ReadValue<float>();
+    }
+
+    public void ThrustBinding(InputAction.CallbackContext context){
+        inputAxis.y = context.ReadValue<float>();
+    }
+
+    public void SetInputAxis(float2 axis){
+        inputAxis = axis ;
     }
 
     public void Accelerate(){
@@ -63,7 +79,8 @@ public class ShipMovement : MonoBehaviour
 
             //clamps
             velocity /= MaxSpeed;
-            velocity = math.clamp(velocity, new float3(-1, -1, -1), new float3(1,1,1));
+            if(math.lengthsq(velocity) > 1.0)
+                velocity /= math.length(velocity);
             velocity *= MaxSpeed;
             fire = true;
         }else if(inputAxis.y <= -0.05f){

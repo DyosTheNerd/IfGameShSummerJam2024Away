@@ -7,7 +7,7 @@ public class SuckBeam : ToolEffect
 {
     List<PickUpStartup> goldCubes = new List<PickUpStartup>();
     List<PickUpStartup> gottenCubes = new List<PickUpStartup>();
-    ShipToolManager manager;
+    //ShipToolManager manager;
 
     public float SuckPower;
     public float MinDistance;

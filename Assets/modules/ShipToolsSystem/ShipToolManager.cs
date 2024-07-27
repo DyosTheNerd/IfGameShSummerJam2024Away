@@ -58,12 +58,21 @@ public class ShipToolManager : MonoBehaviour
     {
         UpdateShipAimVectors();
         Aim(aimAxis);
+    }
 
-        if(Input.GetButtonDown("Shoot" + playerNumber)){
+
+    public void BindControls(PlayerInput input)
+    {
+        InputActionMap  actions = input.actions.FindActionMap("ShipControls");
+        if(actions == null) return;
+        actions.FindAction("ShootMain").started += ShootBinding;
+        actions.FindAction("ShootMain").canceled += ShootBinding;
+    }
+
+    public void ShootBinding(InputAction.CallbackContext context){
+        if(context.started){
             ActivateTool();
-        }
-
-        if(Input.GetButtonUp("Shoot" + playerNumber)){
+        } else if(context.canceled){
             DeactivateTool();
         }
     }
@@ -90,8 +99,8 @@ public class ShipToolManager : MonoBehaviour
     }
 
     void Aim(float2 axis){
-        aimAxis.x = Input.GetAxis("Horizontal" + playerNumber);
-        aimAxis.y = Input.GetAxis("Vertical" + playerNumber);
+        // aimAxis.x = Input.GetAxis("Horizontal"+this.playerNumber);
+        // aimAxis.y = Input.GetAxis("Vertical"+this.playerNumber);
        Quaternion q1;
        if(axis.y >= 0.0f)
             q1 = Quaternion.AngleAxis(aimAxis.y * RotationLimits.y, ShipAimRight);

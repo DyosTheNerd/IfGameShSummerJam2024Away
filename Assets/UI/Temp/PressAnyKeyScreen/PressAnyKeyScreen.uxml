@@ -1,0 +1,4 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Temp/PressAnyKeyScreen/pressanykey.uss?fileID=7433441132597879392&amp;guid=c033322ae0668e14a9ccba6696b5b3cc&amp;type=3#pressanykey" />
+    <engine:Label text="Press Any Key..." name="PressAnyKey" style="height: 27px; top: 50%; white-space: nowrap; -unity-text-align: upper-center; -unity-text-outline-color: rgba(241, 241, 241, 0); color: rgb(210, 255, 0);" />
+</engine:UXML>
