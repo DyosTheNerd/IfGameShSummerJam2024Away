@@ -266,8 +266,8 @@ MonoBehaviour:
   currentToolIndex: 0
   BaseAimDirection:
     x: 0
-    y: 0
-    z: 1
+    y: -0.95
+    z: 0.81
 --- !u!1 &8846929993592458174
 GameObject:
   m_ObjectHideFlags: 0

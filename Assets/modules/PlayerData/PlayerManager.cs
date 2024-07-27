@@ -61,6 +61,7 @@ public class PlayerManager : MonoBehaviour
         // if game is not being played and lobby is full. Start Game.
         if(!playing && players.Count == 2)
         {
+            playerInputManager.DisableJoining();
             playing = true;
             SceneManager.LoadScene("GameScene");
             StartCoroutine(AfterSceneLoad());
