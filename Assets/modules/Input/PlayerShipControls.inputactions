@@ -91,8 +91,8 @@
                 },
                 {
                     "name": "positive",
-                    "id": "72c27b25-caa6-488e-a616-b4772ce25f23",
-                    "path": "<Keyboard>/a",
+                    "id": "6ebdd30d-4b23-4caf-96bd-1e35ce18921b",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardLeft",
@@ -102,8 +102,8 @@
                 },
                 {
                     "name": "negative",
-                    "id": "6ebdd30d-4b23-4caf-96bd-1e35ce18921b",
-                    "path": "<Keyboard>/d",
+                    "id": "72c27b25-caa6-488e-a616-b4772ce25f23",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardLeft",
