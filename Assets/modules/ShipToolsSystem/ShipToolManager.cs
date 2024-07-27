@@ -67,8 +67,18 @@ public class ShipToolManager : MonoBehaviour
         if(actions == null) return;
         actions.FindAction("ShootMain").started += ShootBinding;
         actions.FindAction("ShootMain").canceled += ShootBinding;
+        
+        actions.FindAction("SwitchTool").started += SwitchToolBinding;
+        
     }
 
+    public void SwitchToolBinding(InputAction.CallbackContext context){
+        if(context.started){
+            DeactivateTool();
+            currentToolIndex = (currentToolIndex + 1) % tools.Length;
+        }
+    }
+    
     public void ShootBinding(InputAction.CallbackContext context){
         if(context.started){
             ActivateTool();

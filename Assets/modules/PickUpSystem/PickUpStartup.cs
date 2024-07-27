@@ -21,6 +21,7 @@ public class PickUpStartup : MonoBehaviour
 
             yield return new WaitForFixedUpdate(); 
         }
+        gameObject.layer = 8;
     }
 
     public void StartUp(){

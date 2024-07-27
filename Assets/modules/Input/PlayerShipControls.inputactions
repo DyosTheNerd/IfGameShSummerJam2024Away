@@ -31,6 +31,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "SwitchTool",
+                    "type": "Button",
+                    "id": "db245c01-eb46-48ea-95c4-36ebbf1bf873",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -114,7 +123,7 @@
                 {
                     "name": "",
                     "id": "228e378f-47d1-477c-b042-2e7dd6c9c349",
-                    "path": "<Gamepad>/leftStick/y",
+                    "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepads",
@@ -136,7 +145,7 @@
                 {
                     "name": "",
                     "id": "0f6af30b-29e0-4044-a475-3aad7b41710b",
-                    "path": "<Keyboard>/rightShift",
+                    "path": "<Keyboard>/numpad0",
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardRight",
@@ -257,7 +266,7 @@
                 {
                     "name": "",
                     "id": "76dfbd83-7b80-4149-bdec-cc779e1e5ddd",
-                    "path": "<XInputController>/leftStick/y",
+                    "path": "<XInputController>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "XBox",
@@ -279,7 +288,7 @@
                 {
                     "name": "",
                     "id": "4060e112-61be-4c3e-88dd-79fc31d92fe7",
-                    "path": "<XInputController>/rightStick/x",
+                    "path": "<XInputController>/leftStick/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "XBox",
@@ -290,7 +299,7 @@
                 {
                     "name": "",
                     "id": "047df945-a006-4949-94d6-be81e9d1fe3a",
-                    "path": "<DualShockGamepad>/leftStick/y",
+                    "path": "<DualShockGamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "Playstation",
@@ -317,6 +326,72 @@
                     "processors": "",
                     "groups": "Playstation",
                     "action": "Turn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "979b3d9a-0eb4-47cc-91a9-3f04f2b01bcf",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardLeft",
+                    "action": "SwitchTool",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e3f985ec-d72d-4acc-977e-7f8f8dda4ac1",
+                    "path": "<Keyboard>/end",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardRight",
+                    "action": "SwitchTool",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "25028291-e2fe-4298-aebe-f7f35344f551",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepads",
+                    "action": "SwitchTool",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0b110c51-0255-4686-98de-4abf74ad2966",
+                    "path": "<DualShockGamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Playstation",
+                    "action": "SwitchTool",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "429da9d4-067d-45dd-b893-5ec420aba1b5",
+                    "path": "<XInputController>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XBox",
+                    "action": "SwitchTool",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c0f83079-4d89-4649-aaf4-f79f21efe62b",
+                    "path": "<SwitchProControllerHID>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "SwitchPro",
+                    "action": "SwitchTool",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
