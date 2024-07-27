@@ -7,14 +7,12 @@ public class SuckBeam : ToolEffect
 {
     List<PickUpStartup> goldCubes = new List<PickUpStartup>();
     List<PickUpStartup> gottenCubes = new List<PickUpStartup>();
-    //ShipToolManager manager;
-
+    
     public float SuckPower;
     public float MinDistance;
 
     public override void Activate(ShipToolManager manager)
     {
-        this.manager = manager;
         transform.parent.rotation = Quaternion.LookRotation(manager.transform.parent.forward);
         transform.parent.position = manager.transform.position; 
         transform.parent.parent = manager.transform;
@@ -24,6 +22,7 @@ public class SuckBeam : ToolEffect
 
     public override void Deactivate(ShipToolManager manager)
     {
+        Debug.Log("my player" + this.manager.playerNumber);
         Destroy(gameObject.transform.parent.gameObject);
         
         SoundEffectsMaster.stopSoundEffect("beam");

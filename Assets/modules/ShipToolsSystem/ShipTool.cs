@@ -4,8 +4,8 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ShipTool", menuName = "ScriptableObjects/ShipTools/ShipTool", order = 0)]
-public class ShipTool : ScriptableObject
+
+public class ShipTool : MonoBehaviour
 {
     public int maxAmmo = 100;
 
@@ -14,14 +14,14 @@ public class ShipTool : ScriptableObject
     
     public GameObject ProjectilePrefab;
 
-    GameObject currentProjectile;
+    private GameObject currentProjectile;
 
+    private ToolEffect effect;
+    
     public void ActivateTool(ShipToolManager manager)
     {
-
-        
         currentProjectile = Instantiate(ProjectilePrefab);
-        ToolEffect effect = currentProjectile.GetComponentInChildren<ToolEffect>();
+        effect = currentProjectile.GetComponentInChildren<ToolEffect>();
         effect.SetToolManager(manager);
         effect.Activate(manager);
     }
@@ -30,11 +30,10 @@ public class ShipTool : ScriptableObject
     {
         if(currentProjectile == null) return;
         
-        var tool = currentProjectile.GetComponentInChildren<ToolEffect>();
-
-        if (tool != null)
-            tool.Deactivate(manager);
+        if (effect != null)
+            effect.Deactivate(manager);
 
         currentProjectile = null;
+        effect = null;
     }
 }

@@ -82,7 +82,9 @@ public class ShipToolManager : MonoBehaviour
     public void ShootBinding(InputAction.CallbackContext context){
         if(context.started){
             ActivateTool();
-        } else if(context.canceled){
+        } else if(context.canceled)
+        {
+            Debug.Log("Cancelling tool ShootBinding" + this.playerNumber);
             DeactivateTool();
         }
     }
@@ -158,6 +160,7 @@ public class ShipToolManager : MonoBehaviour
 
     public void DeactivateTool()
     {
+        Debug.Log("Deactivating tool" + currentToolIndex + " " + isShooting + " " + playerNumber);
         if (isShooting)
         {
             tools[currentToolIndex].DeactivateTool(this);
