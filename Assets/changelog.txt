@@ -1,3 +1,8 @@
+## Version 0.2.1 2024-07-27 Merged the merge
+  - Fixed some small bugs due to removed / refactored functionality
+  - introduced a new button / action to switch weapons (Keyboard E, north buttons)
+  - added initial ammo implementation
+
 ## Version 0.2 2024-07-24  (MERGED INPUT INTO MAIN)
   - Merged Input branch into main.
 
