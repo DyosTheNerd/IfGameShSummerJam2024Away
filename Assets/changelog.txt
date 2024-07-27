@@ -1,3 +1,8 @@
+## Version 0.2.2. 2024-07-27 added ammo ui update
+  - refactored weapons to Prefabs
+  - Shooting now uses ammo and remaining ammo is shown on screen
+    - known bug, only works for rockets correctly, because somehow high Value, should be 1000 for beam is not set.
+
 ## Version 0.2.1 2024-07-27 Merged the merge
   - Fixed some small bugs due to removed / refactored functionality
   - introduced a new button / action to switch weapons (Keyboard E, north buttons)
