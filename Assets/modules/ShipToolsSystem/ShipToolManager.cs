@@ -27,13 +27,14 @@ public class ShipToolManager : MonoBehaviour
 
     private Transform ShipTransform;
     private float2 aimAxis;
-
+    
+    // ammoUpdate event
+    public delegate void AmmoUpdate(int[] ammoReserves, int playerId);
+    public event AmmoUpdate OnAmmoUpdate;
+    
     public float3 GetAim(){
         return AimDirection;
     }
-
-    
-    
 
     // Start is called before the first frame update
     void Awake()
@@ -49,7 +50,9 @@ public class ShipToolManager : MonoBehaviour
         for (int i = 0; i < tools.Length; i++)
         {
             ammoReserves[i] = tools[i].maxAmmo;
+            
         }
+        _notifyAmmoUpdate();
     }
 
 
@@ -89,12 +92,17 @@ public class ShipToolManager : MonoBehaviour
         }
     }
 
+    private void _notifyAmmoUpdate()
+    {
+        OnAmmoUpdate?.Invoke(ammoReserves, playerNumber);
+    }
+    
     public void FixedUpdate()
     {
         if(isShooting)
         {
             ammoReserves[currentToolIndex] -= tools[currentToolIndex].constAmmoLoss;
-
+            _notifyAmmoUpdate();
             if (ammoReserves[currentToolIndex] <= 0)
             {
                 DeactivateTool();
@@ -153,7 +161,7 @@ public class ShipToolManager : MonoBehaviour
         
         isShooting = true;
         ammoReserves[currentToolIndex] -= tools[currentToolIndex].activationCost;
-        
+        _notifyAmmoUpdate();
         
         tools[currentToolIndex].ActivateTool(this);
     }

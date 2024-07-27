@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxAmmo: 100
-  constAmmoLoss: 1
-  activationCost: 10
+  constAmmoLoss: 0
+  activationCost: 1
   ProjectilePrefab: {fileID: 3494767114120980791, guid: 0f86fa87d26b83a4bb2f324645d506d6,
     type: 3}

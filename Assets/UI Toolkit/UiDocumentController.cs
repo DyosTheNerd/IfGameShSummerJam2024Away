@@ -56,7 +56,33 @@ public class UiDocumentController : MonoBehaviour
                 score2.text = score.ToString();
             }
         };
-        
+
+        ShipToolManager[] toolsManagers =  FindObjectsByType<ShipToolManager>(FindObjectsSortMode.None);
+        foreach (ShipToolManager toolsManager in toolsManagers)
+        {
+            if(toolsManager.playerNumber == 1){
+                toolsManager.OnAmmoUpdate += (ammoReserves, playerId) =>
+                {
+                    rockets1.value = ammoReserves[0];
+                    beam1.value = ammoReserves[1];
+                };
+                rockets1.value = toolsManager.ammoReserves[0];
+                beam1.value = toolsManager.ammoReserves[1];
+                beam1.highValue = toolsManager.tools[1].maxAmmo;
+                rockets1.highValue = toolsManager.tools[0].maxAmmo;
+            }else{
+                toolsManager.OnAmmoUpdate += (ammoReserves, playerId) =>
+                {
+                    rockets2.value = ammoReserves[0];
+                    beam2.value = ammoReserves[1];
+                };
+                rockets2.value = toolsManager.ammoReserves[0];
+                beam2.value = toolsManager.ammoReserves[1];
+                beam2.highValue = toolsManager.tools[1].maxAmmo;
+                rockets2.highValue = toolsManager.tools[0].maxAmmo;
+            }
+        }
+
     }
 
     
