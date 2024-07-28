@@ -49,7 +49,7 @@ public class SuckBeam : ToolEffect
     }
     void Get(PickUpStartup cube){
         Destroy(cube.gameObject);
-        PointSystem.Instance.AddCube();
+        PointSystem.Instance.AddScore(this.manager.playerNumber, "collect");
         SoundEffectsMaster.playSoundEffect("point");
     }
 

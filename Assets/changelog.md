@@ -1,3 +1,6 @@
+## Version 0.2.3. 2024-07-28 scoring cubes on collection
+  - added scoring cubes that are spawned when a player collects a pickup
+
 ## Version 0.2.2. 2024-07-27 added ammo ui update
   - refactored weapons to Prefabs
   - Shooting now uses ammo and remaining ammo is shown on screen
