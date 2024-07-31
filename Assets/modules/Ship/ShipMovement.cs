@@ -12,6 +12,8 @@ public class ShipMovement : MonoBehaviour
     public float TurnAcceleration;
     public float MaxTurnSpeed;
 
+    public float totalSpeed;
+    
     //velocity is 2d because we are stuck on a shell
     public float3 velocity;
 
@@ -92,13 +94,17 @@ public class ShipMovement : MonoBehaviour
             fire = false; 
         }
 
+        totalSpeed = math.length(velocity);
+
     }
 
+    
+    
     public void AccelerateTurn(){
         turnSpeed += math.clamp(TurnAcceleration * Time.fixedDeltaTime * inputAxis.x, -MaxTurnSpeed, MaxTurnSpeed);
 
-        if(math.abs(inputAxis.x) < 0.05f)
-            turnSpeed += -turnSpeed * 0.2f * Time.fixedDeltaTime;
+        // if(math.abs(inputAxis.x) < 0.05f)
+        //     turnSpeed += -turnSpeed * 0.2f * Time.fixedDeltaTime;
     }
 
     private void MoveForward(){

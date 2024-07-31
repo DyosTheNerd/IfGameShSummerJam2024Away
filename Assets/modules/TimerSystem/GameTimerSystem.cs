@@ -24,13 +24,17 @@ public class GameTimerSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timeRemaining = ConfigurationManger.Instance.gameLengthInSeconds;
+        timeRemaining = GetStartingTime();
         OnTimerTick?.Invoke(timeRemaining);
         
         // start coroutine to count down the time every second
         StartCoroutine(CountDown());
     }
     
+    public int GetStartingTime()
+    {
+        return ConfigurationManger.Instance.gameLengthInSeconds;
+    }
     IEnumerator CountDown()
     {
         while (timeRemaining > 0)

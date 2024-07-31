@@ -10,6 +10,8 @@ public class SuckBeam : ToolEffect
     
     public float SuckPower;
     public float MinDistance;
+    
+    
 
     public override void Activate(ShipToolManager manager)
     {
@@ -22,7 +24,6 @@ public class SuckBeam : ToolEffect
 
     public override void Deactivate(ShipToolManager manager)
     {
-        Debug.Log("my player" + this.manager.playerNumber);
         Destroy(gameObject.transform.parent.gameObject);
         
         SoundEffectsMaster.stopSoundEffect("beam");
@@ -43,9 +44,9 @@ public class SuckBeam : ToolEffect
             var l = math.length(cube.transform.position - transform.position);
             if(l < MinDistance){
                 Get(cube);
-                return;
+                
             }
-            //cube.AddVelocity(cube.transform.position - transform.position * SuckPower/math.length(cube.transform.position - transform.position));
+            
     }
     void Get(PickUpStartup cube){
         Destroy(cube.gameObject);

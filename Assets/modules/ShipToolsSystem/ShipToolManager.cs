@@ -87,7 +87,6 @@ public class ShipToolManager : MonoBehaviour
             ActivateTool();
         } else if(context.canceled)
         {
-            Debug.Log("Cancelling tool ShootBinding" + this.playerNumber);
             DeactivateTool();
         }
     }
@@ -119,8 +118,7 @@ public class ShipToolManager : MonoBehaviour
     }
 
     void Aim(float2 axis){
-        // aimAxis.x = Input.GetAxis("Horizontal"+this.playerNumber);
-        // aimAxis.y = Input.GetAxis("Vertical"+this.playerNumber);
+
        Quaternion q1;
        if(axis.y >= 0.0f)
             q1 = Quaternion.AngleAxis(aimAxis.y * RotationLimits.y, ShipAimRight);
@@ -168,7 +166,7 @@ public class ShipToolManager : MonoBehaviour
 
     public void DeactivateTool()
     {
-        Debug.Log("Deactivating tool" + currentToolIndex + " " + isShooting + " " + playerNumber);
+        
         if (isShooting)
         {
             tools[currentToolIndex].DeactivateTool(this);

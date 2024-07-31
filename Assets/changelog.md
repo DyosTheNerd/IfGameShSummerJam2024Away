@@ -1,3 +1,7 @@
+## Version 0.2.4 2024-07-31 
+  - Some small bugs fixed for ui for ammo and score
+  - added station orbiting the asteroid
+
 ## Version 0.2.3. 2024-07-28 scoring cubes on collection
   - added scoring cubes that are spawned when a player collects a pickup
 

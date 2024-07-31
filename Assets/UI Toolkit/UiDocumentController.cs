@@ -33,12 +33,9 @@ public class UiDocumentController : MonoBehaviour
         
         
         score1.text = "0";
-        score2.text = "1";
-        rockets1.value = 20;
-        rockets2.value = 30;
-        beam1.value = 40;
-        beam2.value = 50;
-        timer.text = "8";
+        score2.text = "0";
+
+        timer.text = ""+GameTimerSystem.instance.GetStartingTime();
         portrait1.Blur();
         portrait2.Blur();
         
@@ -56,7 +53,12 @@ public class UiDocumentController : MonoBehaviour
                 score2.text = score.ToString();
             }
         };
-
+        StartCoroutine(SubscribeToShipToolManagers());
+    }
+    
+    IEnumerator SubscribeToShipToolManagers()
+    {
+        yield return new WaitForSeconds(0.1f);
         ShipToolManager[] toolsManagers =  FindObjectsByType<ShipToolManager>(FindObjectsSortMode.None);
         foreach (ShipToolManager toolsManager in toolsManagers)
         {
@@ -82,7 +84,6 @@ public class UiDocumentController : MonoBehaviour
                 rockets2.highValue = toolsManager.tools[0].maxAmmo;
             }
         }
-
     }
 
     
